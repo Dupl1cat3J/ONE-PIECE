@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece | The Grand Voyage</title>
-    <!-- Compiled CSS -->
     <link rel="stylesheet" href="scss/main.css">
 </head>
+
 <body>
 
-    <!-- 1. Initial Loading Screen -->
+    <!-- Loading Screen -->
     <div class="loader-wrapper">
         <div class="loader-content">
             <img src="img/logo.png" alt="One Piece Logo" class="loader-logo">
             <div class="loading-animation-container">
-                <svg class="loading-wave-svg" viewBox="0 0 200 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 10 Q12.5 0 25 10 T50 10 T75 10 T100 10 T125 10 T150 10 T175 10 T200 10" fill="transparent" stroke="#F4C430" stroke-width="2" class="wave-path" />
+                <svg class="loading-wave-svg" viewBox="0 0 200 20" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10 Q12.5 0 25 10 T50 10 T75 10 T100 10 T125 10 T150 10 T175 10 T200 10"
+                        fill="transparent" stroke="#F4C430" stroke-width="2" class="wave-path" />
                 </svg>
                 <div class="loading-ship-container">
                     <svg class="loading-ship" viewBox="0 0 640 512" fill="#E62325" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M280 32c-13.3 0-24 10.7-24 24V288h-32V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H144V136c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H80V200c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H16c-8.8 0-16 7.2-16 16s7.2 16 16 16H624c8.8 0 16-7.2 16-16s-7.2-16-16-16H584V200c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H504V136c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H424V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H368V56c0-13.3-10.7-24-24-24H280zm322.7 326.5c-4.4-1.3-9-2.2-13.7-2.6L553 352H87l-35.9 3.9c-4.7 .4-9.3 1.3-13.7 2.6L1.8 368.6C.6 369 0 370.2 0 371.4V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V371.4c0-1.2-.6-2.4-1.8-2.8l-35.5-10.1zM592 464v-61.9l-22.3-6.4C558 392.4 545.2 391 532.4 391c-19.4 0-38.3 6-53.9 17l-9.1 6.5c-11.8 8.4-26.2 12.9-40.9 12.9H211.5c-14.7 0-29.1-4.5-40.9-12.9l-9.1-6.5C146 397 127.1 391 107.6 391c-12.8 0-25.6 1.4-37.3 4.7L48 402.1V464H592z"/>
+                        <path
+                            d="M280 32c-13.3 0-24 10.7-24 24V288h-32V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H144V136c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H80V200c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H16c-8.8 0-16 7.2-16 16s7.2 16 16 16H624c8.8 0 16-7.2 16-16s-7.2-16-16-16H584V200c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H504V136c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H424V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V288H368V56c0-13.3-10.7-24-24-24H280zm322.7 326.5c-4.4-1.3-9-2.2-13.7-2.6L553 352H87l-35.9 3.9c-4.7 .4-9.3 1.3-13.7 2.6L1.8 368.6C.6 369 0 370.2 0 371.4V464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V371.4c0-1.2-.6-2.4-1.8-2.8l-35.5-10.1zM592 464v-61.9l-22.3-6.4C558 392.4 545.2 391 532.4 391c-19.4 0-38.3 6-53.9 17l-9.1 6.5c-11.8 8.4-26.2 12.9-40.9 12.9H211.5c-14.7 0-29.1-4.5-40.9-12.9l-9.1-6.5C146 397 127.1 391 107.6 391c-12.8 0-25.6 1.4-37.3 4.7L48 402.1V464H592z" />
                     </svg>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 2. Character Pop-up Sequence -->
+    <!-- หารูปวันพีซใส่ตรง Popup หน้าแรก -->
     <div class="initial-popup">
-        <!-- Using a placeholder image for Luffy in Gear 5 or similar epic pose -->
-        <img src="https://images.unsplash.com/photo-1610660373685-b04044be2403?q=80&w=1000&auto=format&fit=crop" alt="Luffy Popup" class="popup-char" style="width: 400px; height: auto; object-fit: cover; border-radius: 10px; mix-blend-mode: screen;">
+        <img src="https://images.unsplash.com/photo-1610660373685-b04044be2403?q=80&w=1000&auto=format&fit=crop"
+            alt="Luffy Popup" class="popup-char"
+            style="width: 400px; height: auto; object-fit: cover; border-radius: 10px; mix-blend-mode: screen;">
     </div>
 
     <!-- 3. Fixed Dynamic Background -->
     <!-- It will change based on section data-bg attribute -->
-    <div class="fixed-bg" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop');"></div>
+    <div class="fixed-bg"
+        style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop');">
+    </div>
 
     <!-- 4. Header & Navigation -->
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="logo">ONE PIECE</a>
-            
+
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -59,68 +66,102 @@
 
     <!-- MAIN CONTENT -->
     <main>
-        
+
         <!-- Welcome / Hero Section -->
-        <section class="hero-section section-padding" style="min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;" data-bg="none">
-            <video autoplay loop muted playsinline class="bg-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.6);">
+        <section class="hero-section section-padding"
+            style="min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;"
+            data-bg="none">
+            <video autoplay loop muted playsinline class="bg-video"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.6);">
                 <source src="https://cdn.pixabay.com/video/2020/05/25/40148-425265492_large.mp4" type="video/mp4">
             </video>
             <div class="container text-center fade-in">
-                <h1 class="h1" style="color: #F4C430; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">The Great Pirate Era Begins</h1>
-                <p class="lead fade-in delay-1" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The Grand Line awaits those who dare to dream</p>
+                <h1 class="h1" style="color: #F4C430; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">The Great Pirate Era
+                    Begins</h1>
+                <p class="lead fade-in delay-1" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">The Grand Line awaits
+                    those who dare to dream</p>
                 <div class="mt-4 fade-in delay-2" style="margin-top: 2rem;">
-                    <a href="#about" class="btn btn-primary" style="background-color: #E62325; border-color: #E62325;">Start Adventure</a>
+                    <a href="#about" class="btn btn-primary"
+                        style="background-color: #E62325; border-color: #E62325;">Start Adventure</a>
                 </div>
             </div>
         </section>
 
         <!-- Main Content (Dark Blue Box Area in Wireframe) -->
-        <section class="content-section section-padding" style="background: #070f1f; position: relative; z-index: 1; border-top: 4px solid #1E90FF; border-bottom: 4px solid #1E90FF;" data-bg="none">
+        <section class="content-section section-padding"
+            style="background: #070f1f; position: relative; z-index: 1; border-top: 4px solid #1E90FF; border-bottom: 4px solid #1E90FF;"
+            data-bg="none">
             <div class="container">
                 <!-- Character Highlight -->
                 <div class="row row-2 align-items-center" style="margin-bottom: 4rem;">
                     <div class="about-image fade-in">
-                        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=600&auto=format&fit=crop" alt="Luffy" style="border-radius: 8px; width: 100%; max-width: 400px; aspect-ratio: 1/1; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=600&auto=format&fit=crop"
+                            alt="Luffy"
+                            style="border-radius: 8px; width: 100%; max-width: 400px; aspect-ratio: 1/1; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                     </div>
                     <div class="about-text fade-in delay-1">
                         <h2 class="h2 text-accent">Monkey D Luffy</h2>
                         <h3 class="h3" style="color: #E62325; margin-bottom: 1rem;">Sub Head</h3>
-                        <p>The founder and captain of the increasingly infamous and powerful Straw Hat Pirates, as well as one of its top fighters. His lifelong dream is to become the Pirate King by finding the legendary treasure.</p>
+                        <p>The founder and captain of the increasingly infamous and powerful Straw Hat Pirates, as well
+                            as one of its top fighters. His lifelong dream is to become the Pirate King by finding the
+                            legendary treasure.</p>
                     </div>
                 </div>
 
                 <!-- News & Updates -->
                 <div class="news-section fade-in" style="margin-bottom: 4rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
                         <div>
                             <h2 class="h2 text-accent">News & Updates</h2>
-                            <p style="color: #E62325; font-weight: bold; margin: 0;">Latest transmissions from the Den Den Mushi</p>
+                            <p style="color: #E62325; font-weight: bold; margin: 0;">Latest transmissions from the Den
+                                Den Mushi</p>
                         </div>
-                        <a href="gallery-news-shop.html" style="color: #E62325; text-decoration: none; font-size: 0.9rem;">View all News</a>
+                        <a href="gallery-news-shop.html"
+                            style="color: #E62325; text-decoration: none; font-size: 0.9rem;">View all News</a>
                     </div>
-                    <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                        <div class="news-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
-                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop" alt="News Image" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="news-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div class="news-card"
+                            style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop"
+                                alt="News Image" style="width: 100%; height: 200px; object-fit: cover;">
                             <div style="padding: 1.5rem;">
-                                <p style="color: #E62325; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase;">Movie Release</p>
-                                <h4 style="color: #F4C430; margin-bottom: 1rem; font-size: 1.2rem;">One Piece Film: Red Global Release Dates</h4>
-                                <p style="font-size: 0.9rem; margin-bottom: 0;">Uta, the world's most beloved singer, is set to reveal herself to the world...</p>
+                                <p
+                                    style="color: #E62325; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase;">
+                                    Movie Release</p>
+                                <h4 style="color: #F4C430; margin-bottom: 1rem; font-size: 1.2rem;">One Piece Film: Red
+                                    Global Release Dates</h4>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Uta, the world's most beloved singer, is
+                                    set to reveal herself to the world...</p>
                             </div>
                         </div>
-                        <div class="news-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
-                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=600&auto=format&fit=crop" alt="News Image" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="news-card"
+                            style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
+                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=600&auto=format&fit=crop"
+                                alt="News Image" style="width: 100%; height: 200px; object-fit: cover;">
                             <div style="padding: 1.5rem;">
-                                <p style="color: #E62325; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase;">Author News</p>
-                                <h4 style="color: #F4C430; margin-bottom: 1rem; font-size: 1.2rem;">Eiichiro Oda's Special Message to Fans</h4>
-                                <p style="font-size: 0.9rem; margin-bottom: 0;">The creator discusses the final saga and what's in store for the Straw Hat...</p>
+                                <p
+                                    style="color: #E62325; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase;">
+                                    Author News</p>
+                                <h4 style="color: #F4C430; margin-bottom: 1rem; font-size: 1.2rem;">Eiichiro Oda's
+                                    Special Message to Fans</h4>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">The creator discusses the final saga and
+                                    what's in store for the Straw Hat...</p>
                             </div>
                         </div>
-                        <div class="news-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
-                            <img src="https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=600&auto=format&fit=crop" alt="News Image" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="news-card"
+                            style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s ease;">
+                            <img src="https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=600&auto=format&fit=crop"
+                                alt="News Image" style="width: 100%; height: 200px; object-fit: cover;">
                             <div style="padding: 1.5rem;">
-                                <p style="color: #E62325; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase;">Events</p>
-                                <h4 style="color: #F4C430; margin-bottom: 1rem; font-size: 1.2rem;">Wano Kuni Exhibition Opening in Tokyo</h4>
-                                <p style="font-size: 0.9rem; margin-bottom: 0;">Experience the world of Wano through life-sized figures and original...</p>
+                                <p
+                                    style="color: #E62325; font-size: 0.8rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase;">
+                                    Events</p>
+                                <h4 style="color: #F4C430; margin-bottom: 1rem; font-size: 1.2rem;">Wano Kuni Exhibition
+                                    Opening in Tokyo</h4>
+                                <p style="font-size: 0.9rem; margin-bottom: 0;">Experience the world of Wano through
+                                    life-sized figures and original...</p>
                             </div>
                         </div>
                     </div>
@@ -129,18 +170,36 @@
                 <!-- Gallery Section -->
                 <div class="gallery-section fade-in">
                     <h2 class="h2 text-accent" style="margin-bottom: 2rem;">Gallery</h2>
-                    <div class="gallery-slider-container" style="position: relative; overflow: hidden; padding-bottom: 1rem;">
-                        <button class="gallery-btn prev-btn" id="galleryPrev" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.7); color: #fff; border: 2px solid #F4C430; padding: 1rem; cursor: pointer; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold;">&lt;</button>
-                        <div class="gallery-track" id="galleryTrack" style="display: flex; gap: 1.5rem; user-select: none;">
-                            <img src="https://images.unsplash.com/photo-1610660373685-b04044be2403?q=80&w=400&auto=format&fit=crop" alt="Gallery 1" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
-                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=400&auto=format&fit=crop" alt="Gallery 2" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
-                            <img src="https://images.unsplash.com/photo-1560961814-1e095a51fb3e?q=80&w=400&auto=format&fit=crop" alt="Gallery 3" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
-                            <img src="https://images.unsplash.com/photo-1623910271500-1c5de22a84e6?q=80&w=400&auto=format&fit=crop" alt="Gallery 4" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
-                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop" alt="Gallery 5" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
-                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=400&auto=format&fit=crop" alt="Gallery 6" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
-                            <img src="https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=400&auto=format&fit=crop" alt="Gallery 7" style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                    <div class="gallery-slider-container"
+                        style="position: relative; overflow: hidden; padding-bottom: 1rem;">
+                        <button class="gallery-btn prev-btn" id="galleryPrev"
+                            style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.7); color: #fff; border: 2px solid #F4C430; padding: 1rem; cursor: pointer; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold;">&lt;</button>
+                        <div class="gallery-track" id="galleryTrack"
+                            style="display: flex; gap: 1.5rem; user-select: none;">
+                            <img src="https://images.unsplash.com/photo-1610660373685-b04044be2403?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 1"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 2"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                            <img src="https://images.unsplash.com/photo-1560961814-1e095a51fb3e?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 3"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                            <img src="https://images.unsplash.com/photo-1623910271500-1c5de22a84e6?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 4"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 5"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 6"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
+                            <img src="https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=400&auto=format&fit=crop"
+                                alt="Gallery 7"
+                                style="width: 250px; height: 350px; object-fit: cover; border-radius: 8px; flex-shrink: 0; pointer-events: none;">
                         </div>
-                        <button class="gallery-btn next-btn" id="galleryNext" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.7); color: #fff; border: 2px solid #F4C430; padding: 1rem; cursor: pointer; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold;">&gt;</button>
+                        <button class="gallery-btn next-btn" id="galleryNext"
+                            style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.7); color: #fff; border: 2px solid #F4C430; padding: 1rem; cursor: pointer; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-weight: bold;">&gt;</button>
                     </div>
                 </div>
             </div>
@@ -150,13 +209,16 @@
 
     <!-- Footer -->
     <footer class="footer" style="position: relative; overflow: hidden; background: transparent;">
-        <video autoplay loop muted playsinline class="bg-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.5);">
+        <video autoplay loop muted playsinline class="bg-video"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.5);">
             <source src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4" type="video/mp4">
         </video>
         <div class="container" style="position: relative; z-index: 1;">
             <div class="footer-grid">
                 <div class="footer-brand" style="text-align: center; margin: 0 auto 2rem;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/One_Piece_Logo.svg" alt="One Piece Logo" style="width: 150px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); margin-bottom: 1rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/One_Piece_Logo.svg"
+                        alt="One Piece Logo"
+                        style="width: 150px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); margin-bottom: 1rem;">
                 </div>
             </div>
             <div class="footer-grid" style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
@@ -183,8 +245,9 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+
+            <div class="footer-bottom"
+                style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
                 <p>&copy; 2026 ONE PIECE. This site is for educational purposes only.</p>
                 <div>
                     <a href="#" style="color: #ccc; margin-right: 1rem; text-decoration: none;">Privacy Policy</a>
@@ -196,4 +259,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

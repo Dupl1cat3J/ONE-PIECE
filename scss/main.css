@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pirata+One&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&family=Space+Grotesk:wght@300..700&display=swap");
 *,
 *::before,
 *::after {
@@ -50,17 +50,21 @@ button {
   font-family: inherit;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1, .h1 {
   font-family: "Pirata One", cursive;
   margin-bottom: 0.5em;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 2px;
+}
+
+h2, .h2,
+h3, .h3,
+p, .p {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1, .h1 {
@@ -626,7 +630,7 @@ p.lead {
   height: 20px;
 }
 .loader-wrapper .loader-content .loading-animation-container .loading-wave-svg .wave-path {
-  stroke: #B11226;
+  stroke: #F4C430;
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
   animation: drawLine 2.5s ease-in-out forwards;
