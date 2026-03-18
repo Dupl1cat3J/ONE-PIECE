@@ -26,10 +26,21 @@
   }
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // LOADING SCREEN
@@ -50,6 +61,7 @@
   &.hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   }
 
   .loader-content {
@@ -106,17 +118,29 @@
 }
 
 @keyframes drawLine {
-  to { stroke-dashoffset: 0; }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes sailShip {
-  0%   { left: -15px; }
-  100% { left: calc(100% - 15px); }
+  0% {
+    left: -15px;
+  }
+
+  100% {
+    left: calc(100% - 15px);
+  }
 }
 
 @keyframes bobShip {
-  from { transform: translateY(0) rotate(-5deg); }
-  to   { transform: translateY(-3px) rotate(5deg); }
+  from {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  to {
+    transform: translateY(-3px) rotate(5deg);
+  }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -186,12 +210,17 @@
 // NEWS CARD
 // ─────────────────────────────────────────────────────────────────────────────
 .news-card {
-  img { transition: filter 0.3s ease; }
+  img {
+    transition: filter 0.3s ease;
+  }
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    img { filter: brightness(1.2); }
+
+    img {
+      filter: brightness(1.2);
+    }
   }
 }
 
@@ -261,11 +290,17 @@
   }
 
   &:hover {
-    img { transform: scale(1.05); }
+    img {
+      transform: scale(1.05);
+    }
 
     .arc-info {
       transform: translateY(0);
-      p, .arc-date { opacity: 1; }
+
+      p,
+      .arc-date {
+        opacity: 1;
+      }
     }
   }
 }
@@ -284,7 +319,9 @@
       transform: scale(1.2);
     }
 
-    &:hover { background-color: rgba(244, 196, 48, 0.7); }
+    &:hover {
+      background-color: rgba(244, 196, 48, 0.7);
+    }
   }
 }
 
@@ -450,7 +487,9 @@
       transform: rotate(2deg);
       transition: transform 0.3s ease;
 
-      &:hover { transform: rotate(0deg) scale(1.05); }
+      &:hover {
+        transform: rotate(0deg) scale(1.05);
+      }
     }
   }
 }
@@ -461,12 +500,18 @@
 @media (min-width: 768px) {
   .loader-wrapper .loader-content {
     width: 300px;
-    .loader-logo { width: 250px; }
+
+    .loader-logo {
+      width: 250px;
+    }
   }
 
   .initial-popup {
     align-items: center;
-    .popup-char { max-height: 90vh; }
+
+    .popup-char {
+      max-height: 90vh;
+    }
   }
 
   .arc-card {
@@ -475,8 +520,14 @@
 
     .arc-info {
       padding: 1.5rem;
-      h3 { font-size: 1.2rem; }
-      p  { font-size: 0.85rem; }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
     }
   }
 
@@ -497,7 +548,9 @@
     padding: 2rem;
     transform: translateX(50px);
 
-    &.active { transform: translateX(0); }
+    &.active {
+      transform: translateX(0);
+    }
 
     .glass-content-wrap {
       flex-direction: row;
@@ -505,8 +558,13 @@
     }
 
     .glass-text-section {
-      .glass-name    { font-size: 1.8rem; }
-      .glass-role    { margin-bottom: 1rem; }
+      .glass-name {
+        font-size: 1.8rem;
+      }
+
+      .glass-role {
+        margin-bottom: 1rem;
+      }
 
       .glass-quote-box {
         padding: 1rem;
@@ -517,8 +575,14 @@
       .glass-stats-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        .glass-stat .stat-label { font-size: 0.75rem; }
-        .glass-stat .stat-value { font-size: 1rem; }
+
+        .glass-stat .stat-label {
+          font-size: 0.75rem;
+        }
+
+        .glass-stat .stat-value {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -533,5 +597,7 @@
     right: 5%;
   }
 
-  .map-interactive-container { height: 1000px; }
+  .map-interactive-container {
+    height: 1000px;
+  }
 }

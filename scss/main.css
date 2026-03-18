@@ -598,6 +598,7 @@ p.lead {
 .loader-wrapper.hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .loader-wrapper .loader-content {
   text-align: center;
@@ -793,7 +794,8 @@ p.lead {
 .arc-card:hover .arc-info {
   transform: translateY(0);
 }
-.arc-card:hover .arc-info p, .arc-card:hover .arc-info .arc-date {
+.arc-card:hover .arc-info p,
+.arc-card:hover .arc-info .arc-date {
   opacity: 1;
 }
 
