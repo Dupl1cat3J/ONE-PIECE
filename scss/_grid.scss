@@ -1,63 +1,58 @@
 @use 'variables' as v;
-@use 'mixins' as m;
-@use 'typography' as t;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// CONTAINER — Mobile default
+// ─────────────────────────────────────────────────────────────────────────────
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .container-fluid {
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
-// Simple CSS Grid rows
+// ─────────────────────────────────────────────────────────────────────────────
+// GRID ROWS — Mobile default: 1 column
+// ─────────────────────────────────────────────────────────────────────────────
 .row {
   display: grid;
-  gap: 2rem;
-  
-  &-2 {
-    grid-template-columns: 1fr;
-    @include respond-to('tablet') {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+  gap: 1.5rem;
 
-  &-3 {
-    grid-template-columns: 1fr;
-    @include respond-to('tablet') {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include respond-to('desktop') {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  &-4 {
-    grid-template-columns: 1fr;
-    @include respond-to('tablet') {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include respond-to('desktop') {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
+  &-2 { grid-template-columns: 1fr; }
+  &-3 { grid-template-columns: 1fr; }
+  &-4 { grid-template-columns: 1fr; }
 }
 
-// Section Paddings
-.section-padding {
-  padding: 5rem 0;
-  @include respond-to('tablet') {
-    padding: 8rem 0;
-  }
-}
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION PADDING — Mobile default: compact
+// ─────────────────────────────────────────────────────────────────────────────
+.section-padding { padding: 3rem 0; }
 
-// Generic Flex utilities
-.d-flex { display: flex; }
-.flex-column { flex-direction: column; }
-.justify-content-center { justify-content: center; }
+// ─────────────────────────────────────────────────────────────────────────────
+// FLEX UTILITIES
+// ─────────────────────────────────────────────────────────────────────────────
+.d-flex                  { display: flex; }
+.flex-column             { flex-direction: column; }
+.justify-content-center  { justify-content: center; }
 .justify-content-between { justify-content: space-between; }
-.align-items-center { align-items: center; }
+.align-items-center      { align-items: center; }
+.mb-5                    { margin-bottom: 3rem; }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSIVE
+// ─────────────────────────────────────────────────────────────────────────────
+@media (min-width: 768px) {
+  .container,
+  .container-fluid { padding: 0 1.5rem; }
+
+  .row { gap: 2rem; }
+  .row-2 { grid-template-columns: repeat(2, 1fr); }
+  .row-3 { grid-template-columns: repeat(2, 1fr); }
+  .row-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .section-padding { padding: 5rem 0; }
+}

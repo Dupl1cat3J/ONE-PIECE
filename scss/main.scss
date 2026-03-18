@@ -9,11 +9,11 @@
 @use 'footer';
 
 // =============================================================================
-// MAIN.SCSS — Mobile default styles on top, @media at bottom
+// MAIN.SCSS — Mobile default on top | @media ล่างสุด
 // =============================================================================
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FADE IN ANIMATION
+// FADE IN
 // ─────────────────────────────────────────────────────────────────────────────
 .fade-in {
   opacity: 0;
@@ -146,7 +146,7 @@
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CHARACTER POPUP (Solo Leveling style)
+// CHARACTER POPUP
 // ─────────────────────────────────────────────────────────────────────────────
 .initial-popup {
   position: fixed;
@@ -289,7 +289,7 @@
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CREW PAGE — Map Interactive Container
+// CREW PAGE — Map
 // ─────────────────────────────────────────────────────────────────────────────
 .map-interactive-container {
   position: relative;
@@ -456,9 +456,8 @@
 }
 
 // =============================================================================
-// RESPONSIVE — @media ไว้ล่างสุดทั้งหมด
+// RESPONSIVE — @media ล่างสุด
 // =============================================================================
-
 @media (min-width: 768px) {
   .loader-wrapper .loader-content {
     width: 300px;
@@ -508,11 +507,13 @@
     .glass-text-section {
       .glass-name    { font-size: 1.8rem; }
       .glass-role    { margin-bottom: 1rem; }
+
       .glass-quote-box {
         padding: 1rem;
         margin-bottom: 1.5rem;
         font-size: 0.9rem;
       }
+
       .glass-stats-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -527,10 +528,6 @@
     }
   }
 
-  .map-interactive-container { height: 850px; }
-}
-
-@media (min-width: 768px) {
   .glass-panel {
     width: 450px;
     right: 5%;

@@ -1,70 +1,75 @@
+@use 'sass:color';
 @use 'variables' as v;
 @use 'mixins' as m;
-@use 'typography' as t;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// FOOTER — Mobile default
+// ─────────────────────────────────────────────────────────────────────────────
 .footer {
-  background-color: darken($color-dark, 5%);
-  padding: 4rem 0 2rem;
-  color: $color-text-muted;
-  border-top: 2px solid rgba($color-hover, 0.2);
+  background-color: color.adjust(v.$color-dark, $lightness: -5%);
+  padding: 3rem 0 1.5rem;
+  color: v.$color-text-muted;
+  border-top: 2px solid rgba(v.$color-hover, 0.2);
 
   .footer-grid {
     display: grid;
+    gap: 2rem;
     grid-template-columns: 1fr;
-    gap: 3rem;
-
-    @include respond-to('tablet') {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include respond-to('desktop') {
-      grid-template-columns: 2fr 1fr 1fr;
-    }
   }
 
   .footer-brand {
+    text-align: center;
+
     .logo {
-      font-family: t.$font-primary;
-      font-size: 2.5rem;
-      color: $color-hover;
+      font-family: v.$font-primary;
+      font-size: 2rem;
+      color: v.$color-hover;
       margin-bottom: 1rem;
       display: inline-block;
     }
+
     p {
       max-width: 400px;
+      margin: 0 auto;
     }
   }
 
   h4 {
-    color: $color-white;
-    font-family: t.$font-secondary;
-    margin-bottom: 1.5rem;
+    color: v.$color-white;
+    font-family: v.$font-secondary;
+    margin-bottom: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
     padding-bottom: 0.5rem;
+    text-align: center;
 
     &::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 40px;
       height: 2px;
-      background: $color-accent;
+      background: v.$color-accent;
     }
   }
 
   ul.footer-links {
+    text-align: center;
+
     li {
       margin-bottom: 0.8rem;
+
       a {
-        color: $color-text-muted;
-        transition: color $transition-fast;
+        color: v.$color-text-muted;
+        transition: color v.$transition-fast;
 
         &:hover {
-          color: $color-hover;
-          padding-left: 5px; // Small indent on hover
+          color: v.$color-hover;
+          padding-left: 5px;
         }
       }
     }
@@ -74,6 +79,7 @@
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    justify-content: center;
 
     a {
       display: inline-flex;
@@ -83,42 +89,79 @@
       height: 40px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.05);
-      color: $color-white;
-      transition: all $transition-fast;
+      color: v.$color-white;
+      transition: all v.$transition-fast;
 
       &:hover {
-        background: $color-accent;
+        background: v.$color-accent;
         transform: translateY(-3px);
       }
     }
   }
 
   .footer-bottom {
-    margin-top: 4rem;
-    padding-top: 2rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
-
-    @include respond-to('tablet') {
-      flex-direction: row;
-    }
+    text-align: center;
 
     p {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .footer-bottom-links {
       display: flex;
       gap: 1.5rem;
-      a {
-        font-size: 0.9rem;
+      a { font-size: 0.85rem; }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSIVE
+// ─────────────────────────────────────────────────────────────────────────────
+@media (min-width: 768px) {
+  .footer {
+    padding: 4rem 0 2rem;
+
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      text-align: left;
+
+      .logo { font-size: 2.5rem; }
+
+      p { margin: 0; }
+    }
+
+    h4 {
+      text-align: left;
+      margin-bottom: 1.5rem;
+
+      &::after {
+        left: 0;
+        transform: none;
       }
+    }
+
+    ul.footer-links { text-align: left; }
+
+    .social-icons { justify-content: flex-start; }
+
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+      margin-top: 4rem;
+      padding-top: 2rem;
     }
   }
 }

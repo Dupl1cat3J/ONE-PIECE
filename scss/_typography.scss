@@ -1,65 +1,100 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// GOOGLE FONTS IMPORT
+// ─────────────────────────────────────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pirata+One&display=swap');
-
+// ─────────────────────────────────────────────────────────────────────────────
+// HEADINGS — Mobile default
+// ─────────────────────────────────────────────────────────────────────────────
 h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Pirate One";
+  font-family: v.$font-primary;
   margin-bottom: 0.5em;
-  font-weight: 400; // Pirata One has only 400 weight usually
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 2px;
 }
 
 h1, .h1 {
-  font-size: clamp(3rem, 8vw, 6rem); 
+  font-size: clamp(2.2rem, 8vw, 6rem);
   @include m.text-gradient;
 }
 
 h2, .h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.6rem, 5vw, 4rem);
   color: v.$color-hover;
 }
 
-h3, .h3 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-}
+h3, .h3 { font-size: clamp(1.2rem, 4vw, 2.5rem); }
+h4, .h4 { font-size: clamp(1rem, 3vw, 1.5rem); }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// BODY TEXT
+// ─────────────────────────────────────────────────────────────────────────────
 p {
   margin-bottom: 1rem;
   color: v.$color-text-muted;
+  font-size: 0.95rem;
+
   &.lead {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: v.$color-text-highlight;
+    line-height: 1.7;
   }
 }
 
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+// ─────────────────────────────────────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────────────────────────────────────
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
 .text-primary { color: v.$color-primary; }
-.text-accent { color: v.$color-accent; }
-.text-hover { color: v.$color-hover; }
+.text-accent  { color: v.$color-accent; }
+.text-hover   { color: v.$color-hover; }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SECTION TITLE
+// ─────────────────────────────────────────────────────────────────────────────
 .section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   @include m.flex-column;
   align-items: center;
 
   &::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 4px;
+    width: 50px;
+    height: 3px;
     background: v.$color-accent;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     border-radius: 2px;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSIVE
+// ─────────────────────────────────────────────────────────────────────────────
+@media (min-width: 768px) {
+  p {
+    font-size: 1rem;
+    &.lead { font-size: 1.25rem; }
+  }
+
+  .section-title {
+    margin-bottom: 3rem;
+    &::after {
+      width: 60px;
+      height: 4px;
+      margin-top: 1rem;
+    }
   }
 }

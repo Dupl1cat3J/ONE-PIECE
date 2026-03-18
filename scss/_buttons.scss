@@ -1,15 +1,14 @@
-// -----------------------------------------------------------------------------
-// BUTTONS
-// -----------------------------------------------------------------------------
-
+@use 'sass:color';
 @use 'variables' as v;
-@use 'mixins' as m;
-@use 'typography' as t;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// BUTTONS — Mobile default
+// ─────────────────────────────────────────────────────────────────────────────
 .btn {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 1.5rem;
   font-family: v.$font-secondary;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -19,8 +18,8 @@
   z-index: 1;
   transition: all v.$transition-normal;
   text-align: center;
+  cursor: pointer;
 
-  // Background sweep effect 
   &::before {
     content: '';
     position: absolute;
@@ -33,28 +32,21 @@
     z-index: -1;
   }
 
-  &:hover::before {
-    left: 0;
-  }
+  &:hover::before { left: 0; }
+  &:active { transform: scale(0.98); }
 
-  &:active {
-    transform: scale(0.98);
-  }
-
-  // Primary Button (Red)
   &-primary {
     background-color: v.$color-accent;
     color: v.$color-white;
-    box-shadow: 0 4px 15px rgba(v.$color-accent, 0.4);
+    box-shadow: 0 4px 15px rgba(177, 18, 38, 0.4);
 
     &:hover {
-      background-color: darken(v.$color-accent, 101%);
-      box-shadow: 0 6px 20px rgba(v.$color-accent, 0.6);
+      background-color: color.adjust(v.$color-accent, $lightness: -10%);
+      box-shadow: 0 6px 20px rgba(177, 18, 38, 0.6);
       color: v.$color-white;
     }
   }
 
-  // Secondary Button (Gold outline)
   &-outline {
     background-color: transparent;
     color: v.$color-hover;
@@ -63,7 +55,17 @@
     &:hover {
       background-color: v.$color-hover;
       color: v.$color-primary;
-      box-shadow: 0 0 15px rgba(v.$color-hover, 0.5);
+      box-shadow: 0 0 15px rgba(244, 196, 48, 0.5);
     }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// RESPONSIVE
+// ─────────────────────────────────────────────────────────────────────────────
+@media (min-width: 768px) {
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
   }
 }

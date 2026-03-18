@@ -1,18 +1,21 @@
 @use 'variables' as v;
-@use 'typography' as t;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// RESET
+// ─────────────────────────────────────────────────────────────────────────────
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
-  font-size: 16px; // Base size
+  font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; // Offset for fixed header
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -25,23 +28,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-ul,
-ol {
-  list-style: none;
-}
+ul, ol { list-style: none; }
 
 a {
   text-decoration: none;
   color: inherit;
   transition: color v.$transition-fast;
-
-  &:hover {
-    color: v.$color-hover;
-  }
+  &:hover { color: v.$color-hover; }
 }
 
-img,
-video {
+img, video {
   max-width: 100%;
   height: auto;
   display: block;
