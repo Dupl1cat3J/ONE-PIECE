@@ -5,10 +5,11 @@
 // BUTTONS — Mobile default
 // ─────────────────────────────────────────────────────────────────────────────
 .btn {
+  text-decoration: none;
   display: inline-block;
-  padding: 0.9rem 1.5rem;
+  padding: 16px 24px;
   font-family: v.$font-secondary;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;

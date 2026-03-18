@@ -13,7 +13,7 @@
 h1, .h1
 {
   font-family: v.$font-primary;
-  margin-bottom: 0.5em;
+  margin-bottom: 20;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 2px;
@@ -31,7 +31,7 @@ p, .p
 }
 
 h1, .h1 {
-  font-size: clamp(2.2rem, 8vw, 6rem);
+  // font-size: clamp(2.2rem, 8vw, 6rem);
   @include m.text-gradient;
 }
 
@@ -40,23 +40,37 @@ h2, .h2 {
   color: v.$color-hover;
 }
 
-h3, .h3 { font-size: clamp(1.2rem, 4vw, 2.5rem); }
-h4, .h4 { font-size: clamp(1rem, 3vw, 1.5rem); }
+// h3, .h3 { font-size: clamp(1.2rem, 4vw, 2.5rem); }
+// h4, .h4 { font-size: clamp(1rem, 3vw, 1.5rem); }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BODY TEXT
 // ─────────────────────────────────────────────────────────────────────────────
-p {
-  margin-bottom: 1rem;
-  color: v.$color-text-muted;
-  font-size: 0.95rem;
 
-  &.lead {
-    font-size: 1.1rem;
-    color: v.$color-text-highlight;
-    line-height: 1.7;
-  }
-}
+h1 {
+   margin-bottom: 16px;
+   color: v.$color-text-muted;
+   font-size: 64px;
+
+   &.lead {
+     font-size: 48px;
+     color: v.$color-text-highlight;
+     line-height: 1.5;
+   }
+
+ }
+
+p {
+   margin-bottom: 16px;
+   color: v.$color-text-muted;
+   font-size: 20px;
+
+   &.lead {
+     font-size: 18px;
+     color: v.$color-text-highlight;
+     line-height: 1.7;
+   }
+ }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // UTILITIES

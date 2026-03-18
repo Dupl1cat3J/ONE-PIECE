@@ -16,7 +16,7 @@
 
   &.scrolled {
     @include m.glass-dark(0.85, 12px);
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
 
@@ -39,11 +39,11 @@
 
   // ── Nav Menu: Mobile default = slide-in drawer ──────────────────────────
   .nav-menu {
+    list-style: none;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
-    max-width: 400px;
+    width: 100vw;
     height: 100vh;
     @include m.glass-dark(0.95, 20px);
     display: flex;
@@ -53,7 +53,9 @@
     gap: 2.5rem;
     transition: right v.$transition-normal;
 
-    &.active { right: 0; }
+    &.active {
+      right: 0;
+    }
 
     li a {
       font-family: v.$font-secondary;
@@ -62,6 +64,8 @@
       letter-spacing: 1px;
       position: relative;
       font-size: 1.1rem;
+      color: v.$color-white; // ← fix: บอก browser ให้ใช้สีขาว ไม่ใช่ default purple
+      text-decoration: none;
 
       &::after {
         content: '';
@@ -74,41 +78,59 @@
         transition: width v.$transition-fast;
       }
 
+      &:hover {
+        color: v.$color-hover; // ← hover เปลี่ยนเป็นสีทอง
+      }
+
       &:hover::after,
-      &.active::after { width: 100%; }
+      &.active::after {
+        width: 100%;
+      }
     }
   }
 
   // ── Hamburger: Mobile default = visible ────────────────────────────────
   .hamburger {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
     cursor: pointer;
     z-index: 1001;
+    padding: 6px;
 
     .bar {
+      display: block; // ← สำคัญ ถ้าไม่มีนี้ขีดไม่ขึ้น
       width: 25px;
       height: 2px;
       background-color: v.$color-white;
-      margin: 5px 0;
+      border-radius: 2px;
       transition: all v.$transition-normal;
     }
 
     &.active {
-      .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-      .bar:nth-child(2) { opacity: 0; }
-      .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
     }
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// RESPONSIVE
-// ─────────────────────────────────────────────────────────────────────────────
 @media (min-width: 768px) {
   .header {
     padding: 1rem 0;
 
-    .logo { font-size: 2rem; }
+    .logo {
+      font-size: 2rem;
+    }
 
     .nav-menu {
       position: static;
@@ -123,9 +145,13 @@
       justify-content: flex-end;
       gap: 2rem;
 
-      li a { font-size: 0.9rem; }
+      li a {
+        font-size: 0.9rem;
+      }
     }
 
-    .hamburger { display: none; }
+    .hamburger {
+      display: none;
+    }
   }
 }
