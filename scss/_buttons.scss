@@ -36,12 +36,12 @@
   &:active { transform: scale(0.98); }
 
   &-primary {
-    background-color: v.$color-accent;
+    background-color: v.$color-button;
     color: v.$color-white;
     box-shadow: 0 4px 15px rgba(177, 18, 38, 0.4);
 
     &:hover {
-      background-color: color.adjust(v.$color-accent, $lightness: -10%);
+      background-color: color.adjust(v.$color-button, $lightness: -10%);
       box-shadow: 0 6px 20px rgba(177, 18, 38, 0.6);
       color: v.$color-white;
     }

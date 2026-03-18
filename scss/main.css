@@ -16,7 +16,7 @@ html {
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  background-color: #0B1E3D;
+  background-color: #070F1F;
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
@@ -108,10 +108,10 @@ p.lead {
 }
 
 .text-primary {
-  color: #0B1E3D;
+  color: #070F1F;
 }
 
-.text-accent {
+.text-button {
   color: #B11226;
 }
 
@@ -202,7 +202,7 @@ p.lead {
 }
 .btn-outline:hover {
   background-color: #F4C430;
-  color: #0B1E3D;
+  color: #070F1F;
   box-shadow: 0 0 15px rgba(244, 196, 48, 0.5);
 }
 
@@ -675,7 +675,7 @@ p.lead {
   z-index: -1;
   background-size: cover;
   background-position: center;
-  background-color: #0B1E3D;
+  background-color: #070F1F;
   transition: background-image 1s ease-in-out, background-color 1s ease-in-out;
 }
 .fixed-bg::after {
@@ -735,7 +735,7 @@ p.lead {
 }
 .gallery-btn:hover {
   background-color: #B11226 !important;
-  color: #0B1E3D !important;
+  color: #070F1F !important;
 }
 
 .arc-card {
@@ -850,7 +850,7 @@ p.lead {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #0B1E3D;
+  color: #070F1F;
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);

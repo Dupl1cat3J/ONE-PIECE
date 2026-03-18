@@ -79,7 +79,7 @@
         height: 20px;
 
         .wave-path {
-          stroke: v.$color-accent;
+          stroke: v.$color-button;
           stroke-dasharray: 200;
           stroke-dashoffset: 200;
           animation: drawLine 2.5s ease-in-out forwards;
@@ -199,7 +199,7 @@
   transition: background-color 0.3s ease, border-color 0.3s ease;
 
   &:hover {
-    background-color: v.$color-accent !important;
+    background-color: v.$color-button !important;
     color: v.$color-primary !important;
   }
 }
@@ -252,7 +252,7 @@
       display: flex;
       justify-content: space-between;
       font-size: 0.75rem;
-      color: v.$color-accent;
+      color: v.$color-button;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 0.5rem;
       opacity: 0;
@@ -280,7 +280,7 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 
     &.active {
-      background-color: v.$color-accent;
+      background-color: v.$color-button;
       transform: scale(1.2);
     }
 
@@ -340,7 +340,7 @@
 
   &.active .anchor-icon,
   &:hover .anchor-icon {
-    background: v.$color-accent;
+    background: v.$color-button;
     color: v.$color-white;
     transform: scale(1.1) translateY(-5px);
     border-color: v.$color-white;
@@ -398,14 +398,14 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 0.8rem;
-      color: v.$color-accent;
+      color: v.$color-button;
     }
 
     .glass-quote-box {
       background: rgba(0, 0, 0, 0.3);
       padding: 0.8rem;
       border-radius: 8px;
-      border-left: 3px solid v.$color-accent;
+      border-left: 3px solid v.$color-button;
       margin-bottom: 1rem;
       font-style: italic;
       font-size: 0.85rem;
