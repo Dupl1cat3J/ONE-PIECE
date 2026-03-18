@@ -23,7 +23,7 @@
 
   .footer-brand {
     .logo {
-      font-family: $font-primary;
+      font-family: t.$font-primary;
       font-size: 2.5rem;
       color: $color-hover;
       margin-bottom: 1rem;
@@ -36,7 +36,7 @@
 
   h4 {
     color: $color-white;
-    font-family: $font-secondary;
+    font-family: t.$font-secondary;
     margin-bottom: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;

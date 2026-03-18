@@ -1,6 +1,5 @@
 @use 'variables' as v;
 @use 'mixins' as m;
-@use 'typography' as t;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pirata+One&display=swap');
@@ -11,7 +10,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: $font-primary;
+  font-family: "Pirate One";
   margin-bottom: 0.5em;
   font-weight: 400; // Pirata One has only 400 weight usually
   line-height: 1.2;
@@ -20,12 +19,12 @@ h6, .h6 {
 
 h1, .h1 {
   font-size: clamp(3rem, 8vw, 6rem); 
-  @include text-gradient;
+  @include m.text-gradient;
 }
 
 h2, .h2 {
   font-size: clamp(2rem, 5vw, 4rem);
-  color: $color-hover;
+  color: v.$color-hover;
 }
 
 h3, .h3 {
@@ -34,24 +33,24 @@ h3, .h3 {
 
 p {
   margin-bottom: 1rem;
-  color: $color-text-muted;
+  color: v.$color-text-muted;
   &.lead {
     font-size: 1.25rem;
-    color: $color-text-highlight;
+    color: v.$color-text-highlight;
   }
 }
 
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
-.text-primary { color: $color-primary; }
-.text-accent { color: $color-accent; }
-.text-hover { color: $color-hover; }
+.text-primary { color: v.$color-primary; }
+.text-accent { color: v.$color-accent; }
+.text-hover { color: v.$color-hover; }
 
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
-  @include flex-column;
+  @include m.flex-column;
   align-items: center;
 
   &::after {
@@ -59,7 +58,7 @@ p {
     display: block;
     width: 60px;
     height: 4px;
-    background: $color-accent;
+    background: v.$color-accent;
     margin-top: 1rem;
     border-radius: 2px;
   }

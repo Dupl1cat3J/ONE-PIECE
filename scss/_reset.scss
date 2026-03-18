@@ -16,9 +16,9 @@ html {
 }
 
 body {
-  font-family: $font-secondary;
-  background-color: $color-primary;
-  color: $color-white;
+  font-family: v.$font-secondary;
+  background-color: v.$color-primary;
+  color: v.$color-white;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -33,10 +33,10 @@ ol {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color $transition-fast;
+  transition: color v.$transition-fast;
 
   &:hover {
-    color: $color-hover;
+    color: v.$color-hover;
   }
 }
 

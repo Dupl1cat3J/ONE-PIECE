@@ -9,13 +9,12 @@
 @use 'footer';
 
 // =============================================================================
-// MAIN.SCSS — Mobile First
-// Default styles = Mobile
-// @media (min-width: 768px)  = Tablet+
-// @media (min-width: 1024px) = Desktop
+// MAIN.SCSS — Mobile default styles on top, @media at bottom
 // =============================================================================
 
-// ── Fade In Animation ────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// FADE IN ANIMATION
+// ─────────────────────────────────────────────────────────────────────────────
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -32,7 +31,9 @@
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
-// ── Loading Screen ───────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// LOADING SCREEN
+// ─────────────────────────────────────────────────────────────────────────────
 .loader-wrapper {
   position: fixed;
   top: 0;
@@ -54,23 +55,15 @@
   .loader-content {
     text-align: center;
     color: v.$color-white;
-    width: 240px;                        // Mobile: narrower
+    width: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-      width: 300px;                      // Tablet+: standard
-    }
-
     .loader-logo {
-      width: 180px;                      // Mobile: smaller logo
+      width: 180px;
       margin-bottom: 20px;
       filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        width: 250px;                    // Tablet+: full size
-      }
     }
 
     .loading-animation-container {
@@ -115,16 +108,20 @@
 @keyframes drawLine {
   to { stroke-dashoffset: 0; }
 }
+
 @keyframes sailShip {
   0%   { left: -15px; }
   100% { left: calc(100% - 15px); }
 }
+
 @keyframes bobShip {
   from { transform: translateY(0) rotate(-5deg); }
   to   { transform: translateY(-3px) rotate(5deg); }
 }
 
-// ── Fixed Background ─────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// FIXED BACKGROUND
+// ─────────────────────────────────────────────────────────────────────────────
 .fixed-bg {
   position: fixed;
   top: 0;
@@ -140,30 +137,31 @@
   &::after {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.4);
   }
 }
 
-// ── Character Popup (Solo Leveling style) ────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// CHARACTER POPUP (Solo Leveling style)
+// ─────────────────────────────────────────────────────────────────────────────
 .initial-popup {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 9998;
   display: flex;
   justify-content: center;
-  align-items: flex-end;       // Mobile: anchor to bottom
+  align-items: flex-end;
   pointer-events: none;
   opacity: 0;
   transform: scale(1.1);
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-
-  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-    align-items: center;       // Tablet+: centered
-  }
 
   &.show {
     opacity: 1;
@@ -176,23 +174,20 @@
   }
 
   .popup-char {
-    max-height: 70vh;          // Mobile: not too tall
+    max-height: 70vh;
     transform: translateY(50px);
     opacity: 0;
     transition: all 0.8s ease 0.3s;
     filter: drop-shadow(0 0 20px rgba(v.$color-hover, 0.5));
-
-    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-      max-height: 90vh;        // Tablet+: larger character
-    }
   }
 }
 
-// ── News Card ────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// NEWS CARD
+// ─────────────────────────────────────────────────────────────────────────────
 .news-card {
-  img {
-    transition: filter 0.3s ease;
-  }
+  img { transition: filter 0.3s ease; }
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -202,26 +197,24 @@
 
 .gallery-btn {
   transition: background-color 0.3s ease, border-color 0.3s ease;
+
   &:hover {
     background-color: v.$color-accent !important;
     color: v.$color-primary !important;
   }
 }
 
-// ── Arc Carousel ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// ARC CAROUSEL
+// ─────────────────────────────────────────────────────────────────────────────
 .arc-card {
   position: relative;
-  width: 260px;                // Mobile: slightly narrower
+  width: 260px;
   height: 360px;
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-
-  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-    width: 300px;              // Tablet+: standard
-    height: 400px;
-  }
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 
   img {
     width: 100%;
@@ -232,25 +225,18 @@
 
   .arc-info {
     position: absolute;
-    bottom: 0; left: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     padding: 1.2rem;
-    background: linear-gradient(to top, #070f1f 40%, rgba(7,15,31,0.9) 70%, transparent);
+    background: linear-gradient(to top, #070f1f 40%, rgba(7, 15, 31, 0.9) 70%, transparent);
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-      padding: 1.5rem;
-    }
 
     h3 {
       font-size: 1rem;
       color: v.$color-white;
       margin-bottom: 0.5rem;
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        font-size: 1.2rem;
-      }
     }
 
     p {
@@ -260,10 +246,6 @@
       margin-bottom: 1rem;
       opacity: 0;
       transition: opacity 0.3s 0.2s;
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        font-size: 0.85rem;
-      }
     }
 
     .arc-date {
@@ -271,7 +253,7 @@
       justify-content: space-between;
       font-size: 0.75rem;
       color: v.$color-accent;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 0.5rem;
       opacity: 0;
       transition: opacity 0.3s 0.3s;
@@ -280,6 +262,7 @@
 
   &:hover {
     img { transform: scale(1.05); }
+
     .arc-info {
       transform: translateY(0);
       p, .arc-date { opacity: 1; }
@@ -301,51 +284,39 @@
       transform: scale(1.2);
     }
 
-    &:hover {
-      background-color: rgba(244, 196, 48, 0.7);
-    }
+    &:hover { background-color: rgba(244, 196, 48, 0.7); }
   }
 }
 
-// =============================================================================
-// CREW PAGE (crew.html / grandline.html) — Map Interactive
-// =============================================================================
-
-// ── Map Container ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// CREW PAGE — Map Interactive Container
+// ─────────────────────────────────────────────────────────────────────────────
 .map-interactive-container {
   position: relative;
   width: 100%;
   max-width: 1000px;
+  height: 700px;
   margin: 2rem auto 0;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(7, 15, 31, 0.4);
   backdrop-filter: blur(5px);
-
-  // MOBILE: shorter height (path fits in portrait)
-  height: 700px;
-
-  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-    height: 850px;             // Tablet+
-  }
-
-  @media (min-width: map-get(v.$breakpoints, 'desktop')) {
-    height: 1000px;            // Desktop: full
-  }
 }
 
-// ── SVG Path ──────────────────────────────────────────────────────────────────
 .map-svg-path {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
 }
 
-// ── Anchor Points ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// CREW PAGE — Anchor Points
+// ─────────────────────────────────────────────────────────────────────────────
 .anchor-point {
   position: absolute;
   z-index: 2;
@@ -353,24 +324,18 @@
   cursor: pointer;
 
   .anchor-icon {
-    width: 36px;               // Mobile: slightly smaller touch target
+    width: 36px;
     height: 36px;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: v.$color-primary;
     font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 2px solid transparent;
-
-    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-      width: 40px;             // Tablet+: standard
-      height: 40px;
-      font-size: 1.2rem;
-    }
   }
 
   &.active .anchor-icon,
@@ -383,12 +348,10 @@
   }
 }
 
-// ── Glassmorphism Character Panel ─────────────────────────────────────────────
-// MOBILE: fixed bottom panel (full width)
-// TABLET+: absolute right panel
-
+// ─────────────────────────────────────────────────────────────────────────────
+// CREW PAGE — Glass Panel (Mobile: bottom sheet)
+// ─────────────────────────────────────────────────────────────────────────────
 .glass-panel {
-  // MOBILE default
   position: fixed;
   bottom: 0;
   left: 0;
@@ -399,13 +362,13 @@
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px 20px 0 0;  // Mobile: rounded top corners only
+  border-radius: 20px 20px 0 0;
   box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.8);
   color: v.$color-white;
   padding: 1.5rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(100%);   // Mobile: slides up from bottom
+  transform: translateY(100%);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &.active {
@@ -414,39 +377,10 @@
     transform: translateY(0);
   }
 
-  // TABLET+ (768px+): floating right panel
-  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-    position: absolute;
-    bottom: auto;
-    left: auto;
-    top: 10%;
-    right: 3%;
-    width: 380px;
-    border-radius: 15px;
-    padding: 2rem;
-    transform: translateX(50px);  // slides in from right
-
-    &.active {
-      transform: translateX(0);
-    }
-  }
-
-  // DESKTOP: wider panel
-  @media (min-width: map-get(v.$breakpoints, 'desktop')) {
-    width: 450px;
-    right: 5%;
-  }
-
-  // ── Panel Content Layout ────────────────────────────────────────────────
   .glass-content-wrap {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    flex-direction: column;      // Mobile: stacked
-
-    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-      flex-direction: row;       // Tablet+: side by side
-      gap: 1.5rem;
-    }
   }
 
   .glass-text-section {
@@ -457,10 +391,6 @@
       margin-bottom: 0.2rem;
       font-family: v.$font-primary;
       letter-spacing: 1px;
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        font-size: 1.8rem;
-      }
     }
 
     .glass-role {
@@ -469,14 +399,10 @@
       letter-spacing: 1px;
       margin-bottom: 0.8rem;
       color: v.$color-accent;
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        margin-bottom: 1rem;
-      }
     }
 
     .glass-quote-box {
-      background: rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.3);
       padding: 0.8rem;
       border-radius: 8px;
       border-left: 3px solid v.$color-accent;
@@ -484,23 +410,12 @@
       font-style: italic;
       font-size: 0.85rem;
       color: #dfdfdf;
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-      }
     }
 
     .glass-stats-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;  // Mobile: side by side stats
+      grid-template-columns: 1fr 1fr;
       gap: 0.8rem;
-
-      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-        grid-template-columns: 1fr;    // Tablet+: stacked
-        gap: 1rem;
-      }
 
       .glass-stat {
         display: flex;
@@ -510,48 +425,116 @@
           font-size: 0.7rem;
           color: #999;
           text-transform: uppercase;
-
-          @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-            font-size: 0.75rem;
-          }
         }
 
         .stat-value {
           font-size: 0.9rem;
           font-weight: bold;
           color: v.$color-hover;
-
-          @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-            font-size: 1rem;
-          }
         }
       }
     }
   }
 
-  // ── Wanted Poster ──────────────────────────────────────────────────────
   .glass-poster-section {
-    width: 100px;              // Mobile: smaller poster
+    width: 100px;
     flex-shrink: 0;
     align-self: center;
-
-    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
-      width: 140px;            // Tablet+: full size
-      align-self: auto;
-    }
 
     img {
       width: 100%;
       height: auto;
       border-radius: 5px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
       border: 2px solid #ddd;
       transform: rotate(2deg);
       transition: transform 0.3s ease;
 
-      &:hover {
-        transform: rotate(0deg) scale(1.05);
-      }
+      &:hover { transform: rotate(0deg) scale(1.05); }
     }
   }
+}
+
+// =============================================================================
+// RESPONSIVE — @media ไว้ล่างสุดทั้งหมด
+// =============================================================================
+
+@media (min-width: 768px) {
+  .loader-wrapper .loader-content {
+    width: 300px;
+    .loader-logo { width: 250px; }
+  }
+
+  .initial-popup {
+    align-items: center;
+    .popup-char { max-height: 90vh; }
+  }
+
+  .arc-card {
+    width: 300px;
+    height: 400px;
+
+    .arc-info {
+      padding: 1.5rem;
+      h3 { font-size: 1.2rem; }
+      p  { font-size: 0.85rem; }
+    }
+  }
+
+  .anchor-point .anchor-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .glass-panel {
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    top: 10%;
+    right: 3%;
+    width: 380px;
+    border-radius: 15px;
+    padding: 2rem;
+    transform: translateX(50px);
+
+    &.active { transform: translateX(0); }
+
+    .glass-content-wrap {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+
+    .glass-text-section {
+      .glass-name    { font-size: 1.8rem; }
+      .glass-role    { margin-bottom: 1rem; }
+      .glass-quote-box {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+      .glass-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        .glass-stat .stat-label { font-size: 0.75rem; }
+        .glass-stat .stat-value { font-size: 1rem; }
+      }
+    }
+
+    .glass-poster-section {
+      width: 140px;
+      align-self: auto;
+    }
+  }
+
+  .map-interactive-container { height: 850px; }
+}
+
+@media (min-width: 768px) {
+  .glass-panel {
+    width: 450px;
+    right: 5%;
+  }
+
+  .map-interactive-container { height: 1000px; }
 }
