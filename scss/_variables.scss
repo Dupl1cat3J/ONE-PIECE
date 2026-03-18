@@ -1,0 +1,26 @@
+$color-primary: #0B1E3D; // Deep Ocean Blue (Background)
+$color-secondary: #1F3C88; // Sea Blue (Card background)
+$color-accent: #B11226; // Pirate Red (Buttons/Highlights)
+$color-hover: #F4C430; // Gold Treasure (Hover/Accent)
+$color-dark: #070F1F; // Dark Navy (Section background)
+$color-text-highlight: #EAE2B7; // Sand Beige
+$color-text-muted: #B0B3B8; // Smoke Gray
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Typography
+$font-primary: 'Pirata One', cursive; // Pirate theme font
+$font-secondary: 'Inter', sans-serif; // Clean reading font
+
+// Breakpoints
+// $breakpoints: (
+//   'mobile': 480px,
+//   'tablet': 768px,
+//   'desktop': 1024px,
+//   'large': 1440px
+// );
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);

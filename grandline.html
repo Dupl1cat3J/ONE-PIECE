@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straw the Crew | One Piece</title>
+    <!-- Add FontAwesome for the anchor icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+    <!-- Map Background with Glassmorphism Overlay -->
+    <div class="fixed-bg" style="background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop'); background-position: center; background-size: cover; z-index: -2;"></div>
+    <!-- Glassmorphism dark blur overlay -->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; backdrop-filter: blur(8px); background-color: rgba(7, 15, 31, 0.6); z-index: -1;"></div>
+
+    <!-- Header & Navigation -->
+    <header class="header scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ONE PIECE</a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="characters-arcs.html">The Grand Line</a></li>
+                    <li><a href="crew.html" class="active">Straw the Crew</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main style="padding-top: 120px; min-height: 100vh;">
+        <div class="container fade-in">
+            <div style="margin-bottom: 2rem;">
+                <h1 class="h1 text-accent" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Straw the Crew</h1>
+                <p class="lead" style="color: #fff; max-width: 600px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Meet the pirates who sail together across the Grand Line in search of freedom and the ultimate treasure.</p>
+            </div>
+            
+            <div class="map-interactive-container">
+                
+                <!-- The map winding path (SVG) -->
+                <svg class="map-svg-path" viewBox="0 0 400 1000" preserveAspectRatio="xMidYMid meet">
+                    <!-- A winding dashed line from top to bottom -->
+                    <path class="red-dashed-path" d="M 150 50 C 150 150, 250 200, 250 300 C 250 400, 100 450, 100 550 C 100 650, 300 700, 300 850 C 300 950, 200 980, 200 980" fill="none" stroke="#E62325" stroke-width="4" stroke-dasharray="10 10" stroke-linecap="round"/>
+                </svg>
+
+                <!-- Anchor Points (Positions match the path curve points approximately) -->
+                <!-- Use inline percentages so it is responsive relative to the .map-interactive-container height/width constraints -->
+                <div class="anchor-point" data-crew="luffy" style="top: 5%; left: 37%;">
+                    <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+                <div class="anchor-point" data-crew="zoro" style="top: 20%; left: 50%;">
+                    <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+                <div class="anchor-point" data-crew="nami" style="top: 35%; left: 56.5%;">
+                    <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+                <div class="anchor-point" data-crew="usopp" style="top: 50%; left: 31%;">
+                    <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+                <div class="anchor-point" data-crew="sanji" style="top: 65%; left: 40%;">
+                    <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+                <div class="anchor-point" data-crew="chopper" style="top: 80%; left: 63%;">
+                    <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+
+                <!-- Glassmorphism Character Detail Panel -->
+                <div class="glass-panel" id="crewDetailPanel">
+                    <div class="glass-content-wrap">
+                        <div class="glass-text-section">
+                            <h2 class="glass-name" id="crewName">Select a Crew Member</h2>
+                            <p class="glass-role text-accent" id="crewRole">Role</p>
+                            
+                            <div class="glass-quote-box">
+                                <p id="crewQuote">"..."</p>
+                            </div>
+                            
+                            <div class="glass-stats-grid">
+                                <div class="glass-stat">
+                                    <span class="stat-label">Bounty</span>
+                                    <span class="stat-value text-accent" id="crewBounty">-</span>
+                                </div>
+                                <div class="glass-stat">
+                                    <span class="stat-label">Devil Fruit</span>
+                                    <span class="stat-value" id="crewFruit">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Wanted Poster Image -->
+                        <div class="glass-poster-section">
+                            <img id="crewPoster" src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=800&auto=format&fit=crop" alt="Wanted Poster Placeholder">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="position: relative; overflow: hidden; background: transparent;">
+        <video autoplay loop muted playsinline class="bg-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.5);">
+            <source src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="footer-grid">
+                <div class="footer-brand" style="text-align: center; margin: 0 auto 2rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/One_Piece_Logo.svg" alt="One Piece Logo" style="width: 150px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); margin-bottom: 1rem;">
+                </div>
+            </div>
+            <div class="footer-grid" style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
+                <div class="footer-links-col" style="text-align: center;">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="characters-arcs.html">The Grand Line</a></li>
+                        <li><a href="crew.html">Straw the Crew</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col" style="text-align: center;">
+                    <h4>The Grand Line</h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="characters-arcs.html">About</a></li>
+                        <li><a href="characters-arcs.html">Story Synopsis</a></li>
+                        <li><a href="characters-arcs.html">One Piece Arc</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col" style="text-align: center;">
+                    <h4>Straw Hat Crew</h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="crew.html">Characters & Abilities</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <p>&copy; 2026 ONE PIECE. This site is for educational purposes only.</p>
+                <div>
+                    <a href="#" style="color: #ccc; margin-right: 1rem; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: #ccc; text-decoration: none;">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

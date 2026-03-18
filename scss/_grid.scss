@@ -1,0 +1,63 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'typography' as t;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+// Simple CSS Grid rows
+.row {
+  display: grid;
+  gap: 2rem;
+  
+  &-2 {
+    grid-template-columns: 1fr;
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-3 {
+    grid-template-columns: 1fr;
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond-to('desktop') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-4 {
+    grid-template-columns: 1fr;
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond-to('desktop') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// Section Paddings
+.section-padding {
+  padding: 5rem 0;
+  @include respond-to('tablet') {
+    padding: 8rem 0;
+  }
+}
+
+// Generic Flex utilities
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.align-items-center { align-items: center; }

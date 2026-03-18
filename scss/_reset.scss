@@ -1,0 +1,55 @@
+@use 'variables' as v;
+@use 'typography' as t;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; // Base size
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; // Offset for fixed header
+}
+
+body {
+  font-family: $font-secondary;
+  background-color: $color-primary;
+  color: $color-white;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

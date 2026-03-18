@@ -1,0 +1,557 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+@use 'reset';
+@use 'typography';
+@use 'buttons';
+@use 'grid';
+@use 'header';
+@use 'footer';
+
+// =============================================================================
+// MAIN.SCSS — Mobile First
+// Default styles = Mobile
+// @media (min-width: 768px)  = Tablet+
+// @media (min-width: 1024px) = Desktop
+// =============================================================================
+
+// ── Fade In Animation ────────────────────────────────────────────────────────
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+// ── Loading Screen ───────────────────────────────────────────────────────────
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #070f1f;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loader-content {
+    text-align: center;
+    color: v.$color-white;
+    width: 240px;                        // Mobile: narrower
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+      width: 300px;                      // Tablet+: standard
+    }
+
+    .loader-logo {
+      width: 180px;                      // Mobile: smaller logo
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        width: 250px;                    // Tablet+: full size
+      }
+    }
+
+    .loading-animation-container {
+      position: relative;
+      width: 100%;
+      height: 40px;
+
+      .loading-wave-svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+
+        .wave-path {
+          stroke: v.$color-accent;
+          stroke-dasharray: 200;
+          stroke-dashoffset: 200;
+          animation: drawLine 2.5s ease-in-out forwards;
+        }
+      }
+
+      .loading-ship-container {
+        position: absolute;
+        top: 0;
+        left: -15px;
+        width: 30px;
+        height: 30px;
+        animation: sailShip 2.5s ease-in-out forwards;
+
+        .loading-ship {
+          width: 100%;
+          height: 100%;
+          filter: drop-shadow(0 0 8px rgba(230, 35, 37, 0.6));
+          animation: bobShip 0.6s infinite alternate ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes sailShip {
+  0%   { left: -15px; }
+  100% { left: calc(100% - 15px); }
+}
+@keyframes bobShip {
+  from { transform: translateY(0) rotate(-5deg); }
+  to   { transform: translateY(-3px) rotate(5deg); }
+}
+
+// ── Fixed Background ─────────────────────────────────────────────────────────
+.fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-color: v.$color-primary;
+  transition: background-image 1s ease-in-out, background-color 1s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+// ── Character Popup (Solo Leveling style) ────────────────────────────────────
+.initial-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;       // Mobile: anchor to bottom
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+    align-items: center;       // Tablet+: centered
+  }
+
+  &.show {
+    opacity: 1;
+    transform: scale(1);
+
+    .popup-char {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .popup-char {
+    max-height: 70vh;          // Mobile: not too tall
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease 0.3s;
+    filter: drop-shadow(0 0 20px rgba(v.$color-hover, 0.5));
+
+    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+      max-height: 90vh;        // Tablet+: larger character
+    }
+  }
+}
+
+// ── News Card ────────────────────────────────────────────────────────────────
+.news-card {
+  img {
+    transition: filter 0.3s ease;
+  }
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    img { filter: brightness(1.2); }
+  }
+}
+
+.gallery-btn {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    background-color: v.$color-accent !important;
+    color: v.$color-primary !important;
+  }
+}
+
+// ── Arc Carousel ─────────────────────────────────────────────────────────────
+.arc-card {
+  position: relative;
+  width: 260px;                // Mobile: slightly narrower
+  height: 360px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+    width: 300px;              // Tablet+: standard
+    height: 400px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .arc-info {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(to top, #070f1f 40%, rgba(7,15,31,0.9) 70%, transparent);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+      padding: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: v.$color-white;
+      margin-bottom: 0.5rem;
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        font-size: 1.2rem;
+      }
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s 0.2s;
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        font-size: 0.85rem;
+      }
+    }
+
+    .arc-date {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: v.$color-accent;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s 0.3s;
+    }
+  }
+
+  &:hover {
+    img { transform: scale(1.05); }
+    .arc-info {
+      transform: translateY(0);
+      p, .arc-date { opacity: 1; }
+    }
+  }
+}
+
+.arc-dots {
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(244, 196, 48, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &.active {
+      background-color: v.$color-accent;
+      transform: scale(1.2);
+    }
+
+    &:hover {
+      background-color: rgba(244, 196, 48, 0.7);
+    }
+  }
+}
+
+// =============================================================================
+// CREW PAGE (crew.html / grandline.html) — Map Interactive
+// =============================================================================
+
+// ── Map Container ─────────────────────────────────────────────────────────────
+.map-interactive-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(7, 15, 31, 0.4);
+  backdrop-filter: blur(5px);
+
+  // MOBILE: shorter height (path fits in portrait)
+  height: 700px;
+
+  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+    height: 850px;             // Tablet+
+  }
+
+  @media (min-width: map-get(v.$breakpoints, 'desktop')) {
+    height: 1000px;            // Desktop: full
+  }
+}
+
+// ── SVG Path ──────────────────────────────────────────────────────────────────
+.map-svg-path {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+// ── Anchor Points ─────────────────────────────────────────────────────────────
+.anchor-point {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  .anchor-icon {
+    width: 36px;               // Mobile: slightly smaller touch target
+    height: 36px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: v.$color-primary;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+
+    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+      width: 40px;             // Tablet+: standard
+      height: 40px;
+      font-size: 1.2rem;
+    }
+  }
+
+  &.active .anchor-icon,
+  &:hover .anchor-icon {
+    background: v.$color-accent;
+    color: v.$color-white;
+    transform: scale(1.1) translateY(-5px);
+    border-color: v.$color-white;
+    box-shadow: 0 8px 15px rgba(230, 35, 37, 0.5);
+  }
+}
+
+// ── Glassmorphism Character Panel ─────────────────────────────────────────────
+// MOBILE: fixed bottom panel (full width)
+// TABLET+: absolute right panel
+
+.glass-panel {
+  // MOBILE default
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+  background: rgba(10, 20, 40, 0.92);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px 20px 0 0;  // Mobile: rounded top corners only
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.8);
+  color: v.$color-white;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);   // Mobile: slides up from bottom
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  // TABLET+ (768px+): floating right panel
+  @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    top: 10%;
+    right: 3%;
+    width: 380px;
+    border-radius: 15px;
+    padding: 2rem;
+    transform: translateX(50px);  // slides in from right
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  // DESKTOP: wider panel
+  @media (min-width: map-get(v.$breakpoints, 'desktop')) {
+    width: 450px;
+    right: 5%;
+  }
+
+  // ── Panel Content Layout ────────────────────────────────────────────────
+  .glass-content-wrap {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;      // Mobile: stacked
+
+    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+      flex-direction: row;       // Tablet+: side by side
+      gap: 1.5rem;
+    }
+  }
+
+  .glass-text-section {
+    flex: 1;
+
+    .glass-name {
+      font-size: 1.5rem;
+      margin-bottom: 0.2rem;
+      font-family: v.$font-primary;
+      letter-spacing: 1px;
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        font-size: 1.8rem;
+      }
+    }
+
+    .glass-role {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      color: v.$color-accent;
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .glass-quote-box {
+      background: rgba(0,0,0,0.3);
+      padding: 0.8rem;
+      border-radius: 8px;
+      border-left: 3px solid v.$color-accent;
+      margin-bottom: 1rem;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #dfdfdf;
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    .glass-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;  // Mobile: side by side stats
+      gap: 0.8rem;
+
+      @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+        grid-template-columns: 1fr;    // Tablet+: stacked
+        gap: 1rem;
+      }
+
+      .glass-stat {
+        display: flex;
+        flex-direction: column;
+
+        .stat-label {
+          font-size: 0.7rem;
+          color: #999;
+          text-transform: uppercase;
+
+          @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+            font-size: 0.75rem;
+          }
+        }
+
+        .stat-value {
+          font-size: 0.9rem;
+          font-weight: bold;
+          color: v.$color-hover;
+
+          @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // ── Wanted Poster ──────────────────────────────────────────────────────
+  .glass-poster-section {
+    width: 100px;              // Mobile: smaller poster
+    flex-shrink: 0;
+    align-self: center;
+
+    @media (min-width: map-get(v.$breakpoints, 'tablet')) {
+      width: 140px;            // Tablet+: full size
+      align-self: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      border: 2px solid #ddd;
+      transform: rotate(2deg);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(0deg) scale(1.05);
+      }
+    }
+  }
+}
