@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery, News & Shop | One Piece</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Straw the Crew | One Piece</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
 
-    <!-- Fixed Dynamic Background -->
-    <div class="fixed-bg" style="background-image: url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=2670&auto=format&fit=crop');"></div>
+    <div class="crew-bg-wrapper">
+        <div class="crew-bg-map"></div>
+        <div class="crew-bg-glass"></div>
+    </div>
 
-    <!-- Header & Navigation -->
     <header class="header scrolled">
         <div class="container nav-container">
-            <a href="index.html" class="logo">ONE PIECE</a>
-            
+            <h1 class="nav-logo-text">ONE PIECE</h1>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="characters-arcs.html">Characters & Arcs</a></li>
-                    <li><a href="gallery-news-shop.html" class="active">Gallery & Shop</a></li>
+                    <li><a href="grandline.html">The Grand Line</a></li>
+                    <li><a href="crew.html" class="active">Straw the Crew</a></li>
                 </ul>
             </nav>
-
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -32,134 +32,240 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main style="padding-top: 100px;">
+    <main class="crew-main">
+        <div class="container">
 
-        <!-- Gallery Section -->
-        <section class="section-padding" data-bg="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=2670&auto=format&fit=crop">
-            <div class="container fade-in">
-                <div class="text-center mb-5">
-                    <h1 class="h1">The Grand Gallery</h1>
-                    <p class="lead">Visual archives from the New World.</p>
-                </div>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=1000&auto=format&fit=crop" alt="Gallery 1"></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1623910271500-1c5de22a84e6?q=80&w=1000&auto=format&fit=crop" alt="Gallery 2"></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop" alt="Gallery 3"></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560961814-1e095a51fb3e?q=80&w=1000&auto=format&fit=crop" alt="Gallery 4"></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1000&auto=format&fit=crop" alt="Gallery 5"></div>
-                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=1000&auto=format&fit=crop" alt="Gallery 6"></div>
-                </div>
+            <div class="crew-hero fade-in">
+                <h1 class="h1">Straw the Crew</h1>
+                <p class="lead">Meet the pirates who sail together across the Grand Line in search of freedom and the ultimate treasure.</p>
             </div>
-        </section>
 
-        <!-- News & Updates (Logbook) -->
-        <section class="section-padding" style="background: rgba(11, 30, 61, 0.95);" data-bg="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop">
-             <div class="container fade-in">
-                <h2 class="section-title">Logbook Updates</h2>
-                
-                <div class="news-list">
-                    <article class="news-item fade-in">
-                        <div class="news-image">
-                            <img src="https://images.unsplash.com/photo-1659344426563-71ab5230bd71?q=80&w=1000&auto=format&fit=crop" alt="News 1">
+            <!-- Timeline -->
+            <div class="crew-timeline fade-in">
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="luffy">
+                        <div class="crew-card-img">
+                            <img src="https://i.pinimg.com/736x/40/31/00/403100c729d0ef4551aeadfa57d9cbf7.jpg" alt="Luffy">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
                         </div>
-                        <div class="news-content">
-                            <span class="date">Oct 24, 2025</span>
-                            <h3>One Piece Film: Red Shatters Box Office Records</h3>
-                            <p>Uta's voice reaches new heights as the latest movie becomes the highest-grossing film in the franchise's history.</p>
-                            <a href="#" class="btn btn-outline">Read Entry</a>
-                        </div>
-                    </article>
-
-                    <article class="news-item fade-in">
-                        <div class="news-image">
-                            <img src="https://images.unsplash.com/photo-1580136608260-4e94119864cc?q=80&w=1000&auto=format&fit=crop" alt="News 2">
-                        </div>
-                        <div class="news-content">
-                            <span class="date">Sep 05, 2025</span>
-                            <h3>Eiichiro Oda's Sketchbook: Designing the Final Saga</h3>
-                            <p>Exclusive interview drops hints regarding the creative process behind the Egghead Arc and beyond.</p>
-                            <a href="#" class="btn btn-outline">Read Entry</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Merchandise Shop -->
-        <section class="section-padding" data-bg="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop">
-            <div class="container fade-in">
-                <h2 class="section-title">The Treasure Hoard</h2>
-                
-                <div class="shop-grid">
-                    <div class="shop-item fade-in delay-1">
-                        <div class="item-image"><img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=500&auto=format&fit=crop" alt="Figure"></div>
-                        <h4>Gear 5 Luffy Figure</h4>
-                        <span class="price">$189.00</span>
-                        <button class="btn btn-outline">Buy Now</button>
-                    </div>
-                    
-                    <div class="shop-item fade-in delay-2">
-                        <div class="item-image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=500&auto=format&fit=crop" alt="Hoodie"></div>
-                        <h4>Jolly Roger Hoodie</h4>
-                        <span class="price">$55.00</span>
-                        <button class="btn btn-outline">Buy Now</button>
-                    </div>
-
-                    <div class="shop-item fade-in delay-3">
-                        <div class="item-image"><img src="https://images.unsplash.com/photo-1627850991658-00fc826e7b28?q=80&w=500&auto=format&fit=crop" alt="Compass"></div>
-                        <h4>Grand Line Log Pose</h4>
-                        <span class="price">$120.00</span>
-                        <button class="btn btn-outline">Buy Now</button>
-                    </div>
-
-                     <div class="shop-item fade-in delay-4">
-                        <div class="item-image"><img src="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=500&auto=format&fit=crop" alt="Poster"></div>
-                        <h4>Wanted Poster Set</h4>
-                        <span class="price">$40.00</span>
-                        <button class="btn btn-outline">Buy Now</button>
+                        <div class="crew-card-info"><h3>Monkey D. Luffy</h3><p>Captain</p></div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section class="section-padding" style="background: rgba(7, 15, 31, 0.95);" data-bg="none">
-            <div class="container fade-in">
-                <h2 class="section-title">Send a Transponder Snail</h2>
-                
-                <div class="contact-container">
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required placeholder="Monkey D. Luffy">
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="zoro">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=400&auto=format&fit=crop" alt="Zoro">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" required placeholder="captain@strawhats.com">
+                        <div class="crew-card-info"><h3>Roronoa Zoro</h3><p>Swordsman</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="nami">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1560961814-1e095a51fb3e?q=80&w=400&auto=format&fit=crop" alt="Nami">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" required placeholder="Leave a message for the crew..."></textarea>
+                        <div class="crew-card-info"><h3>Nami</h3><p>Navigator</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="usopp">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop" alt="Usopp">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Signal</button>
-                    </form>
+                        <div class="crew-card-info"><h3>Usopp</h3><p>Sniper</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="sanji">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=400&auto=format&fit=crop" alt="Sanji">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
+                        </div>
+                        <div class="crew-card-info"><h3>Sanji</h3><p>Cook</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="chopper">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=400&auto=format&fit=crop" alt="Chopper">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
+                        </div>
+                        <div class="crew-card-info"><h3>Tony Tony Chopper</h3><p>Doctor</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="robin">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=400&auto=format&fit=crop" alt="Robin">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
+                        </div>
+                        <div class="crew-card-info"><h3>Nico Robin</h3><p>Archaeologist</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="franky">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?q=80&w=400&auto=format&fit=crop" alt="Franky">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
+                        </div>
+                        <div class="crew-card-info"><h3>Franky</h3><p>Shipwright</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="brook">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400&auto=format&fit=crop" alt="Brook">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
+                        </div>
+                        <div class="crew-card-info"><h3>Brook</h3><p>Musician</p></div>
+                    </div>
+                </div>
+
+                <div class="crew-timeline-item">
+                    <div class="crew-card" data-crew="jinbe">
+                        <div class="crew-card-img">
+                            <img src="https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=400&auto=format&fit=crop" alt="Jinbe">
+                            <div class="crew-card-overlay"><span>View Profile</span></div>
+                        </div>
+                        <div class="crew-card-info"><h3>Jinbe</h3><p>Helmsman</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Detail Overlay -->
+        <div class="crew-detail-overlay" id="crewDetailOverlay">
+            <div class="crew-detail-panel" id="crewDetailPanel">
+                <button class="crew-detail-close" id="crewClose"><i class="fa-solid fa-xmark"></i></button>
+                <div class="crew-detail-layout">
+                    <div class="crew-wanted">
+                        <div class="wanted-frame">
+                            <p class="wanted-label">WANTED</p>
+                            <img id="crewImg" src="" alt="Character">
+                            <p class="wanted-dead">DEAD OR ALIVE</p>
+                            <p class="wanted-name" id="crewWantedName"></p>
+                        </div>
+                    </div>
+                    <div class="crew-detail-info">
+                        <h2 id="crewName" class="crew-detail-name"></h2>
+                        <p id="crewRole" class="crew-detail-role"></p>
+                        <div class="crew-detail-quote"><p id="crewQuote"></p></div>
+                        <div class="crew-detail-stats">
+                            <div class="crew-stat">
+                                <span class="stat-label">Bounty</span>
+                                <span class="stat-value bounty-value" id="crewBounty"></span>
+                            </div>
+                            <div class="crew-stat">
+                                <span class="stat-label">Devil Fruit</span>
+                                <span class="stat-value" id="crewFruit"></span>
+                            </div>
+                            <div class="crew-stat">
+                                <span class="stat-label">Origin</span>
+                                <span class="stat-value" id="crewOrigin"></span>
+                            </div>
+                        </div>
+                        <p class="crew-detail-bio" id="crewBio"></p>
+                        <button class="btn btn-primary crew-close-btn" id="crewCloseBtn">Close</button>
+                    </div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand"><h1 class="nav-logo-text">ONE PIECE</h1></div>
+            </div>
+            <div class="footer-nav-row">
+                <div class="footer-links-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="grandline.html">The Grand Line</a></li>
+                        <li><a href="crew.html">Straw the Crew</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>The Grand Line</h4>
+                    <ul class="footer-links">
+                        <li><a href="grandline.html#about">About</a></li>
+                        <li><a href="grandline.html#synopsis">Story Synopsis</a></li>
+                        <li><a href="grandline.html#arcs">One Piece Arc</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Straw Hat Crew</h4>
+                    <ul class="footer-links">
+                        <li><a href="crew.html">Characters & Abilities</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom">
-                 <p>&copy; 2026 One Piece Final Project. Educational purposes only.</p>
+                <p>&copy; 2026 ONE PIECE. This site is for educational purposes only.</p>
+                <div class="condition"><p>Privacy Policy</p><p>Term of Use</p></div>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    const crewData = {
+        luffy:   { name:"Monkey D. Luffy", role:"Captain", bounty:"฿ 3,000,000,000", fruit:"Hito Hito no Mi, Model: Nika", origin:"Foosha Village, East Blue", bio:"The founder and captain of the Straw Hat Pirates. His dream is to find the One Piece and become King of the Pirates.", quote:'"I\'m going to be King of the Pirates!"', img:"https://i.pinimg.com/736x/40/31/00/403100c729d0ef4551aeadfa57d9cbf7.jpg" },
+        zoro:    { name:"Roronoa Zoro", role:"Swordsman", bounty:"฿ 1,111,000,000", fruit:"None", origin:"Shimotsuki Village, East Blue", bio:"A master swordsman who aims to become the world's greatest. He uses the three-sword style — Santoryu.", quote:'"Nothing happened."', img:"https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=400" },
+        nami:    { name:"Nami", role:"Navigator", bounty:"฿ 366,000,000", fruit:"None", origin:"Cocoyasi Village, East Blue", bio:"The navigator of the Straw Hats. She can read weather patterns perfectly and wields the Clima-Tact.", quote:'"Steal from pirates and give to me."', img:"https://images.unsplash.com/photo-1560961814-1e095a51fb3e?q=80&w=400" },
+        usopp:   { name:"Usopp", role:"Sniper", bounty:"฿ 500,000,000", fruit:"None", origin:"Syrup Village, East Blue", bio:"The sharpshooter of the crew. A gifted inventor and storyteller who strives to be a brave warrior of the sea.", quote:'"I am the great warrior, Sogeking!"', img:"https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400" },
+        sanji:   { name:"Sanji", role:"Cook", bounty:"฿ 1,032,000,000", fruit:"None", origin:"Baratie, East Blue", bio:"The cook of the Straw Hats. He only fights with his legs and dreams of finding the All Blue.", quote:'"I\'ll never use my hands in a fight."', img:"https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=400" },
+        chopper: { name:"Tony Tony Chopper", role:"Doctor", bounty:"฿ 1,000", fruit:"Hito Hito no Mi", origin:"Drum Island, Grand Line", bio:"A reindeer who ate the Human-Human Fruit. He dreams of becoming a doctor who can cure any disease.", quote:'"I\'m not a tanuki!"', img:"https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=400" },
+        robin:   { name:"Nico Robin", role:"Archaeologist", bounty:"฿ 930,000,000", fruit:"Hana Hana no Mi", origin:"Ohara, West Blue", bio:"The archaeologist of the Straw Hats. She seeks the truth of the Void Century and the meaning of the Poneglyphs.", quote:'"I want to live!"', img:"https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=400" },
+        franky:  { name:"Franky", role:"Shipwright", bounty:"฿ 394,000,000", fruit:"None", origin:"South Blue", bio:"The cyborg shipwright who built the Thousand Sunny. His dream is to build a ship that sails to the end of the world.", quote:'"SUPER!"', img:"https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?q=80&w=400" },
+        brook:   { name:"Brook", role:"Musician", bounty:"฿ 383,000,000", fruit:"Yomi Yomi no Mi", origin:"West Blue", bio:"A living skeleton musician who returned to life thanks to his Devil Fruit. He dreams of reuniting with Laboon.", quote:'"Yohohoho!"', img:"https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=400" },
+        jinbe:   { name:"Jinbe", role:"Helmsman", bounty:"฿ 1,100,000,000", fruit:"None", origin:"Fishman Island", bio:"A fish-man martial arts master and former Warlord of the Sea. He is a master of Fishman Karate.", quote:'"A man\'s worth is not determined by his birth, but by his actions."', img:"https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=400" },
+    };
+
+    const overlay     = document.getElementById('crewDetailOverlay');
+    const cards       = document.querySelectorAll('.crew-card');
+    const closeBtn    = document.getElementById('crewClose');
+    const closeBtnBot = document.getElementById('crewCloseBtn');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const d = crewData[card.dataset.crew];
+            if (!d) return;
+            document.getElementById('crewImg').src             = d.img;
+            document.getElementById('crewWantedName').textContent = d.name;
+            document.getElementById('crewName').textContent    = d.name;
+            document.getElementById('crewRole').textContent    = d.role;
+            document.getElementById('crewQuote').textContent   = d.quote;
+            document.getElementById('crewBounty').textContent  = d.bounty;
+            document.getElementById('crewFruit').textContent   = d.fruit;
+            document.getElementById('crewOrigin').textContent  = d.origin;
+            document.getElementById('crewBio').textContent     = d.bio;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closePanel() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    closeBtn.addEventListener('click', closePanel);
+    closeBtnBot.addEventListener('click', closePanel);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closePanel(); });
+    </script>
 </body>
 </html>
