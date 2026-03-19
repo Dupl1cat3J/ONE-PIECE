@@ -7,7 +7,9 @@
 @use 'grid';
 @use 'header';
 @use 'footer';
-@use 'pages';
+@use 'home';
+@use 'grandline';
+@use 'crew';
 
 .fade-in {
   opacity: 0;
