@@ -874,7 +874,7 @@ p.lead {
   z-index: -2;
   overflow: hidden;
 }
-.fixed-bg-video .fixed-bg-vid {
+.fixed-bg-video .fixed-bg-bg {
   position: absolute;
   top: 50%;
   left: 50%;
