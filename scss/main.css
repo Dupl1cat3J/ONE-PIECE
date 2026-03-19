@@ -1380,6 +1380,114 @@ p.lead {
   background: rgba(7, 15, 31, 0.45);
 }
 
+.arc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.arc-header h2 {
+  margin: 0;
+}
+
+.arc-row-container {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.arc-row-container::-webkit-scrollbar {
+  display: none;
+}
+.arc-row-container {
+  scrollbar-width: none;
+}
+
+.arc-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.arc-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  width: 260px;
+  flex-shrink: 0;
+}
+.arc-card img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.arc-card:hover img {
+  transform: scale(1.05);
+}
+
+.arc-nav-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.arc-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #B11226;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+.arc-nav-btn:hover {
+  background-color: #F4C430;
+  border-color: #F4C430;
+}
+@media (min-width: 768px) {
+  .arc-nav-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.grandline-synopsis-section {
+  background: rgba(11, 30, 61, 0.95);
+}
+.grandline-synopsis-section .synopsis-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .grandline-synopsis-section .synopsis-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+.grandline-synopsis-section .synopsis-img img {
+  width: 100%;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.grandline-synopsis-section .synopsis-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #B0B3B8;
+}
+
 .crew-bg-wrapper {
   position: fixed;
   inset: 0;
