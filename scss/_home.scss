@@ -94,7 +94,7 @@
   .about-text {
     h2 { font-size: 28px; font-family: v.$font-primary; margin-bottom: 16px; }
     h3 { font-size: 24px; color: v.$color-text-highlight; margin-bottom: 16px; }
-    p  { padding: 0 0px 18px 18px; text-align: left; line-height: 150%; }
+    p  { padding: 0; text-align: left; line-height: 150%; }
   }
 }
 
@@ -194,14 +194,12 @@
   font-weight: bold;
   transition: background-color 0.3s ease;
 
-  &:hover { background-color: v.$color-hover; border-color: v.$color-hover; }
+  &:hover { 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-color: v.$color-hover; }
   &.prev-btn { left: 0; }
   &.next-btn { right: 0; }
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// DESKTOP — @media (min-width: 768px)
-// ─────────────────────────────────────────────────────────────────────────────
 
 @media (min-width: 768px) {
 

@@ -682,7 +682,7 @@ p.lead {
   margin-bottom: 16px;
 }
 .character-row .about-text p {
-  padding: 0 0px 18px 18px;
+  padding: 0;
   text-align: left;
   line-height: 150%;
 }
@@ -816,7 +816,7 @@ p.lead {
   transition: background-color 0.3s ease;
 }
 .gallery-btn:hover {
-  background-color: #F4C430;
+  background-color: rgba(0, 0, 0, 0.7);
   border-color: #F4C430;
 }
 .gallery-btn.prev-btn {
@@ -1975,8 +1975,8 @@ p.lead {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .gallery-btn:hover {
-  background-color: #B11226 !important;
-  color: #070F1F !important;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
 }
 
 .arc-card {
