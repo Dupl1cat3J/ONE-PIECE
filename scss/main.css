@@ -1226,6 +1226,52 @@ p.lead {
   margin: 0;
 }
 
+.about-title {
+  font-family: "Pirata One", cursive;
+  color: #F4C430;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.about-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #F4C430;
+}
+
+.section-title {
+  font-family: "Pirata One", cursive;
+  color: #F4C430;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: flex-end;
+}
+.section-title::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #F4C430;
+}
+
+.arc-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.arc-header h2::before, .arc-header h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #F4C430;
+}
+
 .arc-header {
   display: flex;
   align-items: center;

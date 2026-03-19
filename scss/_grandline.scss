@@ -247,6 +247,57 @@
 
 .detail-bio { font-size: 0.9rem; line-height: 1.7; color: v.$color-text-muted; margin: 0; }
 
+// SECTION DIVIDER TITLES
+.about-title {
+  font-family: v.$font-primary;
+  color: v.$color-hover;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: v.$color-hover;
+  }
+}
+
+.section-title {
+  font-family: v.$font-primary;
+  color: v.$color-hover;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: flex-end;
+
+  &::before {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: v.$color-hover;
+  }
+}
+
+.arc-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: v.$color-hover;
+  }
+}
+
 // ONE PIECE ARC
 .arc-header {
   display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;
