@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  //Mobile Menu Toggle 
+  //Mobile Menu Toggle // Toggle ก็เหมือนการใช้ if, else 
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.classList.toggle("active");
   });
 
+  //เมื่อคลิก link(เมนูที่ link ไปหน้าอื่น) ใน nav ให้ปิดเมนูทันที โดยใช้คำสั่ง remove
   document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
   }));
 
-  //Header Scroll Effect
+  //Header Scroll Effect //header เปลี่ยนสไตล์เมื่อมีการ scroll เกิน 50px
   const header = document.querySelector(".header");
   if (header) {
     window.addEventListener("scroll", () => {
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //Fade-in on Scroll
+  //Fade-in on Scroll // การใช้ IntersectionObserver จะเช็คว่า element อยู่ใน viewport แล้วยัง และดีกว่าใช้ scroll event เพราะมันไม่กิน perform ของงาน //observer.unobserve(entry.target) จะ fade in แค่ครั้งเดียว
   const fadeElements = document.querySelectorAll(".fade-in");
   const fadeObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { root: null, rootMargin: "0px", threshold: 0.15 });
   fadeElements.forEach(el => fadeObserver.observe(el));
 
-  //Gallery Slider 
+  //Gallery Slider //getElementById จะหา element ด้วย ID และคำสั่ง if จะเช็คว่ามี element ครบมั้ยเพื่อป้องกัน error ในหน้าที่ไม่มี gallery และสั่ง scroll เลื่อนไปทางขวา 280px เพื่อดูรูปถัดไป ซึ่งมีคำสั่ง -280 เพื่อเลื่อนกลับได้
   const track = document.getElementById("galleryTrack");
   const prevBtn = document.getElementById("galleryPrev");
   const nextBtn = document.getElementById("galleryNext");
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.addEventListener("click", () => track.scrollBy({ left: scrollAmount, behavior: "smooth" }));
   }
 
-  // ── Grand Line Page
+  // --Grand Line Page-- // 
   const crewData = {
     luffy: {
       name: "Monkey D. Luffy", role: "Captain",
@@ -95,6 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1596727147705-611529ea2884?q=80&w=800"
     },
   };
+
+  //card.dataset.crew จะอ่านค่าจาก data-crew="luffy" ใน HTML และ crewData[key] จะเป็นตัวดึง object ของตัวละครนั้นมา และจะใช้ textContent เพื่อเปลี่ยนข้อความใน element
 
   const charCards = document.querySelectorAll(".char-card");
   const detailPanel = document.getElementById("charDetailPanel");
@@ -192,4 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2500);
   }
 
-}); // ปิด DOMContentLoaded
+}); 
+
+//Wrapper hidden ซ่อน Loader
+//Popup show แสดง popup luffy
