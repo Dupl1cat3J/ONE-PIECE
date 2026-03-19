@@ -2,9 +2,6 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// FOOTER — Mobile default
-// ─────────────────────────────────────────────────────────────────────────────
 .footer {
   background-color: color.adjust(v.$color-dark, $lightness: -5%);
   padding: 3rem 0 1.5rem;

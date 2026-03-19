@@ -1,13 +1,14 @@
 @use 'variables' as v;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// CONTAINER — Mobile default
-// ─────────────────────────────────────────────────────────────────────────────
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+
+  @media (min-width: 1400px) { max-width: 1360px; }
+  @media (min-width: 1600px) { max-width: 1520px; }
+  @media (min-width: 1920px) { max-width: 1760px; }
 }
 
 .container-fluid {
@@ -15,9 +16,6 @@
   padding: 0 1rem;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// GRID ROWS — Mobile default: 1 column
-// ─────────────────────────────────────────────────────────────────────────────
 .row {
   display: grid;
   gap: 1.5rem;
@@ -27,14 +25,8 @@
   &-4 { grid-template-columns: 1fr; }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// SECTION PADDING — Mobile default: compact
-// ─────────────────────────────────────────────────────────────────────────────
 .section-padding { padding: 3rem 0; }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// FLEX UTILITIES
-// ─────────────────────────────────────────────────────────────────────────────
 .d-flex                  { display: flex; }
 .flex-column             { flex-direction: column; }
 .justify-content-center  { justify-content: center; }
@@ -42,9 +34,6 @@
 .align-items-center      { align-items: center; }
 .mb-5                    { margin-bottom: 3rem; }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// RESPONSIVE
-// ─────────────────────────────────────────────────────────────────────────────
 @media (min-width: 768px) {
   .container,
   .container-fluid { padding: 0 1.5rem; }

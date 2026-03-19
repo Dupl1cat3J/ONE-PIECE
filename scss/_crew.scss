@@ -2,10 +2,6 @@
 @use 'mixins' as m;
 @use 'sass:color';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// CREW PAGE — Mobile First
-// ─────────────────────────────────────────────────────────────────────────────
-
 .crew-bg-wrapper {
   position: fixed;
   inset: 0;
@@ -313,16 +309,6 @@
 .crew-close-btn {
   width: 100%;
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// DESKTOP — @media (min-width: 576px) และ (min-width: 768px)
-// ─────────────────────────────────────────────────────────────────────────────
-
-// @media (min-width: 576px) {
-//   .crew-detail-layout {
-//     grid-template-columns: 200px 1fr;
-//   }
-// }
 
 @media (min-width: 768px) {
   .crew-timeline-item {

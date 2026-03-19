@@ -2,15 +2,11 @@
 @use 'mixins' as m;
 @use 'sass:color';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// HOME PAGE — Mobile First
-// ─────────────────────────────────────────────────────────────────────────────
-
 .popup-char {
   width: 400px;
   height: auto;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 4px;
   mix-blend-mode: screen;
 }
 
@@ -237,7 +233,6 @@
       filter: brightness(0.75);
     }
 
-    // วิ่ง shine sweep
     &::before {
       left: 130%;
       transition: left 0.6s ease;

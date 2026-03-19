@@ -1,9 +1,6 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// HEADER — Mobile default
-// ─────────────────────────────────────────────────────────────────────────────
 .header {
   position: fixed;
   top: 0;
@@ -37,7 +34,6 @@
     @include m.text-gradient;
   }
 
-  // ── Nav Menu: Mobile default = slide-in drawer ──────────────────────────
   .nav-menu {
     list-style: none;
     position: fixed;
@@ -64,7 +60,7 @@
       letter-spacing: 1px;
       position: relative;
       font-size: 1.1rem;
-      color: v.$color-white; // ← fix: บอก browser ให้ใช้สีขาว ไม่ใช่ default purple
+      color: v.$color-white; 
       text-decoration: none;
 
       &::after {
@@ -79,7 +75,7 @@
       }
 
       &:hover {
-        color: v.$color-hover; // ← hover เปลี่ยนเป็นสีทอง
+        color: v.$color-hover;
       }
 
       &:hover::after,
@@ -89,7 +85,6 @@
     }
   }
 
-  // ── Hamburger: Mobile default = visible ────────────────────────────────
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -100,7 +95,7 @@
     padding: 6px;
 
     .bar {
-      display: block; // ← สำคัญ ถ้าไม่มีนี้ขีดไม่ขึ้น
+      display: block; 
       width: 25px;
       height: 2px;
       background-color: v.$color-white;
