@@ -915,15 +915,95 @@ p.lead {
   min-height: 100vh;
 }
 
-.grandline-hero {
-  margin-bottom: 3rem;
+#about,
+#arcs {
+  background: rgba(7, 15, 31, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(244, 196, 48, 0.15);
 }
-.grandline-hero h1 {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+
+.about-title {
+  font-family: "Pirata One", cursive;
+  color: #F4C430;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
-.grandline-hero p.lead {
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 500px;
+.about-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #F4C430;
+}
+
+.about-text {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+#about .character-row {
+  margin-bottom: 0;
+}
+#about .character-row .about-image {
+  order: -1;
+}
+#about .character-row .about-text {
+  order: 0;
+}
+
+@media (min-width: 768px) {
+  #about .character-row .about-image {
+    order: 0;
+  }
+  #about .character-row .about-text {
+    order: -1;
+  }
+}
+.synopsis-title {
+  font-family: "Pirata One", cursive;
+  color: #F4C430;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.synopsis-title::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #F4C430;
+}
+
+.arc-header h2 {
+  font-family: "Pirata One", cursive;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 0 1rem;
+}
+.arc-header h2::before, .arc-header h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #F4C430;
+}
+
+#about .h2.text-accent {
+  font-family: "Space Grotesk", sans-serif;
+  color: #EAE2B7;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+#about .h3 {
+  color: #B0B3B8;
+  font-size: 20px;
+  line-height: 150%;
 }
 
 .gallery-grid {
@@ -1226,52 +1306,6 @@ p.lead {
   margin: 0;
 }
 
-.about-title {
-  font-family: "Pirata One", cursive;
-  color: #F4C430;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.about-title::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #F4C430;
-}
-
-.section-title {
-  font-family: "Pirata One", cursive;
-  color: #F4C430;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  justify-content: flex-end;
-}
-.section-title::before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #F4C430;
-}
-
-.arc-header h2 {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-.arc-header h2::before, .arc-header h2::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #F4C430;
-}
-
 .arc-header {
   display: flex;
   align-items: center;
@@ -1348,7 +1382,10 @@ p.lead {
 }
 
 .grandline-synopsis-section {
-  background: rgba(11, 30, 61, 0.95);
+  background: rgba(7, 15, 31, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(244, 196, 48, 0.15);
 }
 .grandline-synopsis-section .synopsis-layout {
   display: grid;
@@ -1363,8 +1400,8 @@ p.lead {
      object-fit: cover;
 }
 .grandline-synopsis-section .synopsis-text p {
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 20px;
+  line-height: 150%;
   color: #B0B3B8;
 }
 
