@@ -1365,10 +1365,10 @@ p.lead {
 .crew-bg-wrapper .crew-bg-map {
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000&auto=format&fit=crop");
+  background-image: url("https://preview.redd.it/updated-one-piece-world-map-with-luffys-full-path-until-v0-lm93f2q9fqaf1.jpeg?width=1080&crop=smart&auto=webp&s=951b00cc3c619d917c650054af2e6249e2cbbc8d");
   background-size: cover;
   background-position: center;
-  filter: brightness(0.5) saturate(0.6);
+  filter: brightness(0.6) saturate(0.6);
 }
 .crew-bg-wrapper .crew-bg-glass {
   position: absolute;
@@ -1496,7 +1496,7 @@ p.lead {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 5rem 1rem 1rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -1513,12 +1513,28 @@ p.lead {
   backdrop-filter: blur(12px);
   max-width: 720px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 85vh;
   overflow-y: auto;
-  padding: 2rem;
+  padding: 3rem 2rem 2rem;
   position: relative;
   transform: translateY(20px);
   transition: transform 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 196, 48, 0.5) rgba(255, 255, 255, 0.05);
+}
+.crew-detail-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.crew-detail-panel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.crew-detail-panel::-webkit-scrollbar-thumb {
+  background: rgba(244, 196, 48, 0.5);
+  border-radius: 10px;
+}
+.crew-detail-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 196, 48, 0.8);
 }
 .crew-detail-overlay.active .crew-detail-panel {
   transform: translateY(0);
@@ -1526,8 +1542,8 @@ p.lead {
 
 .crew-detail-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.75rem;
+  right: 0.75rem;
   background: transparent;
   border: none;
   color: #B0B3B8;
@@ -1549,39 +1565,13 @@ p.lead {
   display: flex;
   justify-content: center;
 }
-.crew-wanted .wanted-frame {
-  background: #f5e6c0;
-  border: 3px solid #8b6914;
-  border-radius: 4px;
-  padding: 0.75rem;
-  text-align: center;
-  width: 180px;
-}
-.crew-wanted .wanted-frame .wanted-label {
-  font-family: "Pirata One", cursive;
-  font-size: 1.4rem;
-  color: #2c1810;
-  margin: 0 0 0.5rem;
-  letter-spacing: 3px;
-}
-.crew-wanted .wanted-frame img {
+.crew-wanted .wanted-photo {
   width: 100%;
-  height: 160px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: 2px solid #8b6914;
-}
-.crew-wanted .wanted-frame .wanted-dead {
-  font-size: 0.6rem;
-  color: #2c1810;
-  letter-spacing: 2px;
-  margin: 0.4rem 0 0;
-}
-.crew-wanted .wanted-frame .wanted-name {
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: #2c1810;
-  margin: 0.25rem 0 0;
+  max-width: 320px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 8px;
 }
 
 .crew-detail-name {
@@ -1650,11 +1640,6 @@ p.lead {
   width: 100%;
 }
 
-@media (min-width: 576px) {
-  .crew-detail-layout {
-    grid-template-columns: 200px 1fr;
-  }
-}
 @media (min-width: 768px) {
   .crew-timeline-item {
     padding-right: calc(50% + 2rem);
