@@ -223,7 +223,8 @@
       color: v.$color-white;
       font-family: v.$font-secondary;
       font-size: 0.95rem;
-      letter-spacing: 0.03em;
+      // letter-spacing: 0.03em;
+      line-height: 150%;
       text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
   }
