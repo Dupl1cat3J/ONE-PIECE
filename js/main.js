@@ -35,14 +35,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { root: null, rootMargin: "0px", threshold: 0.15 });
   fadeElements.forEach(el => fadeObserver.observe(el));
 
-  //Gallery Slider //getElementById จะหา element ด้วย ID และคำสั่ง if จะเช็คว่ามี element ครบมั้ยเพื่อป้องกัน error ในหน้าที่ไม่มี gallery และสั่ง scroll เลื่อนไปทางขวา 280px เพื่อดูรูปถัดไป ซึ่งมีคำสั่ง -280 เพื่อเลื่อนกลับได้
+  //Gallery Slider
   const track = document.getElementById("galleryTrack");
   const prevBtn = document.getElementById("galleryPrev");
   const nextBtn = document.getElementById("galleryNext");
   if (track && prevBtn && nextBtn) {
     const scrollAmount = 280;
-    prevBtn.addEventListener("click", () => track.scrollBy({ left: -scrollAmount, behavior: "smooth" }));
-    nextBtn.addEventListener("click", () => track.scrollBy({ left: scrollAmount, behavior: "smooth" }));
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      resetAutoScroll();
+    });
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      resetAutoScroll();
+    });
+
+    // Auto scroll ทุก 3 วินาที
+    let autoScroll = setInterval(() => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll) {
+        track.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }, 3000);
+
+    function resetAutoScroll() {
+      clearInterval(autoScroll);
+      autoScroll = setInterval(() => {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll) {
+          track.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }, 3000);
+    }
+
+    // หยุด auto scroll เมื่อ mouse อยู่บน gallery
+    track.addEventListener("mouseenter", () => clearInterval(autoScroll));
+    track.addEventListener("mouseleave", () => resetAutoScroll());
   }
 
   // --Grand Line Page-- // 

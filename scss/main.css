@@ -786,44 +786,95 @@ p.lead {
 .gallery-track::-webkit-scrollbar {
   display: none;
 }
-.gallery-track img {
+
+.gallery-item {
+  position: relative;
   width: 250px;
   height: 350px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
-  flex-shrink: 0;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+  will-change: transform;
+}
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-15deg);
+  z-index: 2;
+  transition: left 0s;
   pointer-events: none;
+}
+.gallery-item .gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+  z-index: 3;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+.gallery-item .gallery-caption span {
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.75);
+}
+.gallery-item:hover::before {
+  left: 130%;
+  transition: left 0.6s ease;
+}
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+.gallery-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .gallery-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   border: 2px solid #B11226;
   cursor: pointer;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 0.75rem;
+  width: 36px;
+  height: 36px;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .gallery-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   border-color: #F4C430;
-}
-.gallery-btn.prev-btn {
-  left: 0;
-}
-.gallery-btn.next-btn {
-  right: 0;
 }
 
 @media (min-width: 768px) {
