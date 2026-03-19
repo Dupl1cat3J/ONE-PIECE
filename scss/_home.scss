@@ -2,6 +2,9 @@
 @use 'mixins' as m;
 @use 'sass:color';
 
+// ─────────────────────────────────────────────────────────────────────────────
+// HOME PAGE — Mobile First
+// ─────────────────────────────────────────────────────────────────────────────
 
 .popup-char {
   width: 400px;
@@ -11,15 +14,11 @@
   mix-blend-mode: screen;
 }
 
-// Footer video background
 .footer {
   position: relative;
   background: #070F1F;
 
-  .footer-inner {
-    position: relative;
-    z-index: 1;
-  }
+  .footer-inner { position: relative; z-index: 1; }
 
   .footer-logo-img {
     width: 150px;
@@ -34,9 +33,7 @@
     flex-wrap: wrap;
   }
 
-  .footer-links-col {
-    text-align: center;
-  }
+  .footer-links-col { text-align: center; }
 }
 
 .nav-logo-text {
@@ -58,45 +55,26 @@
 
   .bg-video {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.6);
   }
 
-  h1 {
-    color: #F4C430;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  p.lead {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  }
-
-  .hero-cta {
-    margin-top: 2rem;
-  }
-
-
+  h1 { color: #F4C430; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+  p.lead { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
+  .hero-cta { margin-top: 2rem; }
 }
 
-// Content Section (Dark box)
 .content-section {
   background: #070f1f;
   position: relative;
   z-index: 1;
-  // border-top: 4px solid #1E90FF;
-  // border-bottom: 4px solid #1E90FF;
 }
 
-// Character highlight row
 .character-row {
   margin-bottom: 4rem;
-
-  // Mobile: จัดกลาง
   text-align: center;
 
   .about-image {
@@ -114,42 +92,12 @@
   }
 
   .about-text {
-
-    h2 {
-      font-size: 28px;
-      font-family: v.$font-primary;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 24px;
-      color: v.$color-text-highlight;
-      margin-bottom: 16px;
-    }
-
-    p {
-      padding: 0 0px 18px 18px;
-      text-align: left;
-      line-height: 150%;
-    }
-  }
-
-  // Desktop: กลับไปซ้ายตามปกติ
-  @media (min-width: 768px) {
-    text-align: left;
-
-    .about-image {
-      justify-content: flex-start;
-    }
-
-    .about-image img {
-      width: 100%;
-      max-width: 400px;
-    }
+    h2 { font-size: 28px; font-family: v.$font-primary; margin-bottom: 16px; }
+    h3 { font-size: 24px; color: v.$color-text-highlight; margin-bottom: 16px; }
+    p  { padding: 0 0px 18px 18px; text-align: left; line-height: 150%; }
   }
 }
 
-// News section header row
 .news-header-row {
   display: flex;
   justify-content: space-between;
@@ -158,24 +106,11 @@
   flex-wrap: wrap;
   gap: 1rem;
 
-  .h2 {
-    font-family: v.$font-primary;
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-
-  .news-subtitle {
-    font-size: 20px;
-    color: v.$color-text-highlight;
-    margin: 0;
-    line-height: 150%;
-  }
-
+  .h2 { font-family: v.$font-primary; font-size: 28px; margin-bottom: 16px; }
+  .news-subtitle { font-size: 20px; color: v.$color-text-highlight; margin: 0; line-height: 150%; }
 }
 
-.news-section {
-  margin-bottom: 4rem;
-}
+.news-section { margin-bottom: 4rem; }
 
 .news-view-more {
   display: flex;
@@ -183,16 +118,10 @@
   margin-top: 2rem;
 }
 
-
-// News Cards grid
 .news-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .news-card {
@@ -206,69 +135,19 @@
   overflow: hidden;
   transition: transform 0.3s ease;
 
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
+  img { width: 100%; height: 200px; object-fit: cover; }
 
-  .news-card-body {
-    padding: 0.75rem 1rem;
-  }
+  .news-card-body { padding: 0.75rem 1rem; }
 
-  .news-tag {
-    color:  #B11226;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
+  .news-tag { color: #B11226; font-size: 16px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; }
 
-  h4 {
-    color: v.$color-hover;
-    margin-bottom: 8px;
-    font-size: 18px;
-    line-height: 150%;
-  }
+  h4 { color: v.$color-hover; margin-bottom: 8px; font-size: 18px; line-height: 150%; }
 
-  p {
-    font-size: 16px;
-    margin-bottom: 0;
-    line-height: 150%;
-  }
-
-  @media (min-width: 768px) {
-    img {
-      height: 200px;
-    }
-
-    .news-card-body {
-      padding: 1.5rem;
-    }
-
-    .news-tag {
-      font-size: 16px;
-      margin-bottom: 0.5rem;
-    }
-
-    h4 {
-      font-size: 20px;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 18px;
-    }
-  }
+  p  { font-size: 16px; margin-bottom: 0; line-height: 150%; }
 }
 
-// Gallery section
 .gallery-section {
-  h2 {
-    font-family: v.$font-primary;
-    font-size: 28px;
-    margin-bottom: 2rem;
-  }
+  h2 { font-family: v.$font-primary; font-size: 28px; margin-bottom: 2rem; }
 }
 
 .gallery-slider-container {
@@ -284,9 +163,7 @@
   overflow-x: auto;
   scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  &::-webkit-scrollbar { display: none; }
 
   img {
     width: 250px;
@@ -308,24 +185,49 @@
   border: 2px solid v.$color-button;
   cursor: pointer;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: v.$color-hover;
-    border-color: v.$color-hover;
+  &:hover { background-color: v.$color-hover; border-color: v.$color-hover; }
+  &.prev-btn { left: 0; }
+  &.next-btn { right: 0; }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DESKTOP — @media (min-width: 768px)
+// ─────────────────────────────────────────────────────────────────────────────
+
+@media (min-width: 768px) {
+
+  .character-row {
+    text-align: left;
+
+    .about-image { justify-content: flex-start; }
+    .about-image img { width: 100%; max-width: 400px; }
   }
 
-  &.prev-btn {
-    left: 0;
+  .news-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .news-card {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    .news-card-body { padding: 1.5rem; }
+    .news-tag       { font-size: 16px; margin-bottom: 0.5rem; }
+    h4              { font-size: 20px; margin-bottom: 1rem; }
+    p               { font-size: 18px; }
   }
 
-  &.next-btn {
-    right: 0;
+  .gallery-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
   }
 }
