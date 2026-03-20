@@ -34,29 +34,31 @@ h2, .h2 {
 
 
 h1 {
-   margin-bottom: 16px;
-   color: v.$color-text-muted;
-   font-size: 64px;
+  margin-bottom: 16px;
+  color: v.$color-text-muted;
+  // clamp(ขนาดเล็กสุด, ขนาดตามจอ, ขนาดใหญ่สุด)
+  // mobile~375px → ~40px | tablet~768px → ~58px | desktop~1920px → 88px
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
 
-   &.lead {
-     font-size: 48px;
-     color: v.$color-text-highlight;
-     line-height: 1.5;
-   }
-
- }
+  &.lead {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    color: v.$color-text-highlight;
+    line-height: 1.5;
+  }
+}
 
 p {
-   margin-bottom: 16px;
-   color: v.$color-text-muted;
-   font-size: 20px;
+  margin-bottom: 16px;
+  color: v.$color-text-muted;
+  // mobile → 16px | desktop~1920px → 20px
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
 
-   &.lead {
-     font-size: 18px;
-     color: v.$color-text-highlight;
-     line-height: 1.7;
-   }
- }
+  &.lead {
+    font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+    color: v.$color-text-highlight;
+    line-height: 1.7;
+  }
+}
 
 .text-center  { text-align: center; }
 .text-left    { text-align: left; }
@@ -83,10 +85,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  p {
-    font-size: 1rem;
-    &.lead { font-size: 1.25rem; }
-  }
 
   .section-title {
     margin-bottom: 3rem;
