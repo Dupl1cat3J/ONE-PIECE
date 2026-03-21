@@ -36,8 +36,6 @@ h2, .h2 {
 h1 {
   margin-bottom: 16px;
   color: v.$color-text-muted;
-  // clamp(ขนาดเล็กสุด, ขนาดตามจอ, ขนาดใหญ่สุด)
-  // mobile~375px → ~40px | tablet~768px → ~58px | desktop~1920px → 88px
   font-size: clamp(2.5rem, 5vw, 5.5rem);
 
   &.lead {

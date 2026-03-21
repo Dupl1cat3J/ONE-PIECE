@@ -11,8 +11,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 4px; // ตามที่ต้องการ
-  // border: 2px solid v.$color-button;
+  border-radius: 4px; 
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -51,14 +50,12 @@
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    // border-color: v.$color-button;
     color: v.$color-white;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
     &:hover {
       background-color: v.$color-button;
-      // border-color: v.$color-button;
       color: v.$color-white;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.35);
@@ -77,9 +74,6 @@
     }
   }
 }
-
-
-
 
 
 @media (min-width: 768px) {

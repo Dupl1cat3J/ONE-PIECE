@@ -444,7 +444,7 @@ p.lead {
   font-family: "Pirata One", cursive;
   font-size: 2rem;
   color: #F4C430;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
   display: inline-block;
 }
 .footer .footer-brand p {
@@ -454,12 +454,12 @@ p.lead {
 .footer h4 {
   color: #ffffff;
   font-family: "Space Grotesk", sans-serif;
-  margin-bottom: 1rem;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 8px;
   text-align: center;
 }
 .footer h4::after {
@@ -488,12 +488,13 @@ p.lead {
   margin-bottom: 0.8rem;
 }
 .footer ul.footer-links li a {
+  font-size: 14px;
   color: #B0B3B8;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 .footer ul.footer-links li a:hover {
-  color: #F4C430;
+  color: #ffffff;
 }
 .footer .social-icons {
   display: flex;
@@ -517,8 +518,7 @@ p.lead {
   transform: translateY(-3px);
 }
 .footer .footer-bottom {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
+  padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
@@ -528,7 +528,7 @@ p.lead {
 }
 .footer .footer-bottom p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 10px;
   color: #B0B3B8;
 }
 .footer .footer-bottom .condition {
@@ -537,23 +537,24 @@ p.lead {
 }
 .footer .footer-bottom .condition p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 10px;
   color: #B0B3B8;
 }
 
 @media (min-width: 768px) {
   .footer {
-    padding: 4rem 0 2rem;
+    padding: 20px 0 20px;
   }
   .footer .footer-nav-row {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     gap: 4rem;
+    padding-bottom: 20px;
   }
   .footer .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .footer .footer-brand {
     text-align: center;
@@ -562,11 +563,11 @@ p.lead {
     font-size: 2.5rem;
   }
   .footer .footer-brand p {
-    margin: 0;
+    margin: 0 auto;
   }
   .footer h4 {
     text-align: left;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
   }
   .footer h4::after {
     left: 0;
@@ -583,8 +584,7 @@ p.lead {
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    margin-top: 4rem;
-    padding-top: 2rem;
+    padding-top: 20px;
   }
 }
 .footer {
@@ -904,15 +904,15 @@ p.lead {
     padding: 1.5rem;
   }
   .news-card .news-tag {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 0.5rem;
   }
   .news-card h4 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 1rem;
   }
   .news-card p {
-    font-size: 18px;
+    font-size: 16px;
   }
   .gallery-btn {
     width: 50px;

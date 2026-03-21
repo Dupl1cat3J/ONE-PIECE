@@ -21,7 +21,7 @@
       font-family: v.$font-primary;
       font-size: 2rem;
       color: v.$color-hover;
-      margin-bottom: 1rem;
+      margin-bottom: 20px;
       display: inline-block;
     }
 
@@ -34,12 +34,13 @@
   h4 {
     color: v.$color-white;
     font-family: v.$font-secondary;
-    margin-bottom: 1rem;
+    font-size: 14px;
+    // margin-bottom: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
-    padding-bottom: 0.5rem;
+    padding-bottom: 8px;
     text-align: center;
 
     &::after {
@@ -71,12 +72,13 @@
       margin-bottom: 0.8rem;
 
       a {
+        font-size: 14px;
         color: v.$color-text-muted;
         text-decoration: none;
         transition: color v.$transition-fast;
 
         &:hover {
-          color: v.$color-hover;
+          color: v.$color-white;
           // padding-left: 1px;
         }
       }
@@ -108,8 +110,8 @@
   }
 
   .footer-bottom {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
+    // margin-top: 3rem;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
@@ -119,7 +121,7 @@
 
     p {
       margin: 0;
-      font-size: 0.85rem;
+      font-size: 10px;
       color: v.$color-text-muted;
     }
 
@@ -129,7 +131,7 @@
 
       p {
         margin: 0;
-        font-size: 0.85rem;
+        font-size: 10px;
         color: v.$color-text-muted;
       }
     }
@@ -138,33 +140,34 @@
 
 @media (min-width: 768px) {
   .footer {
-    padding: 4rem 0 2rem;
+    padding: 20px 0 20px;
 
     .footer-nav-row {
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
       gap: 4rem;
+      padding-bottom: 20px;
     }
 
     .footer-grid {
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1fr;  
+      gap: 1rem;
     }
 
     .footer-brand {
-      text-align: center;
+      text-align: center;         
 
       .logo { 
         font-size: 2.5rem; 
       }
 
-      p { margin: 0; }
+      p { margin: 0 auto; }
     }
 
     h4 {
       text-align: left;
-      margin-bottom: 1.5rem;
+      margin-bottom: 20px;
 
       &::after {
         left: 0;
@@ -181,8 +184,8 @@
       justify-content: space-between;
       align-items: center;
       text-align: left;
-      margin-top: 4rem;
-      padding-top: 2rem;
+      // margin-top: 4rem;
+      padding-top: 20px;
     }
   }
 }
