@@ -64,10 +64,10 @@ h2, .h2 {
 h1 {
   margin-bottom: 16px;
   color: #B0B3B8;
-  font-size: 64px;
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
 }
 h1.lead {
-  font-size: 48px;
+  font-size: clamp(1.5rem, 3vw, 3rem);
   color: #EAE2B7;
   line-height: 1.5;
 }
@@ -75,10 +75,10 @@ h1.lead {
 p {
   margin-bottom: 16px;
   color: #B0B3B8;
-  font-size: 20px;
+  font-size: clamp(1rem, 1.1vw, 1.25rem);
 }
 p.lead {
-  font-size: 18px;
+  font-size: clamp(1.1rem, 1.3vw, 1.5rem);
   color: #EAE2B7;
   line-height: 1.7;
 }
@@ -125,12 +125,6 @@ p.lead {
 }
 
 @media (min-width: 768px) {
-  p {
-    font-size: 1rem;
-  }
-  p.lead {
-    font-size: 1.25rem;
-  }
   .section-title {
     margin-bottom: 3rem;
   }
@@ -143,17 +137,17 @@ p.lead {
 .btn {
   text-decoration: none;
   display: inline-block;
-  padding: 16px 24px;
+  padding: 0.75rem 2.5rem;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   cursor: pointer;
 }
@@ -162,27 +156,31 @@ p.lead {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 60%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: left 0.3s ease-in-out;
-  z-index: -1;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-15deg);
+  transition: left 0.5s ease;
+  z-index: 2;
+  pointer-events: none;
 }
 .btn:hover::before {
-  left: 0;
+  left: 130%;
 }
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 .btn-primary {
-  background-color: #B11226;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(177, 18, 38, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 .btn-primary:hover {
-  background-color: rgb(130.7076923077, 13.2923076923, 28.0615384615);
-  box-shadow: 0 6px 20px rgba(177, 18, 38, 0.6);
+  background-color: #B11226;
   color: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 .btn-outline {
   background-color: transparent;
@@ -589,15 +587,6 @@ p.lead {
     padding-top: 2rem;
   }
 }
-.popup-char {
-  width: 400px;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 4px;
-  mix-blend-mode: screen;
-}
-
 .footer {
   position: relative;
   background: #070F1F;
@@ -654,7 +643,6 @@ p.lead {
 }
 .hero-section h1 {
   color: #F4C430;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .hero-section p.lead {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
@@ -885,11 +873,12 @@ p.lead {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 .gallery-btn:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-  border-color: #F4C430;
+  background-color: #B11226;
+  border-color: #B11226;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
@@ -1508,8 +1497,8 @@ p.lead {
   line-height: 1;
 }
 .arc-nav-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-color: #F4C430;
+  background-color: #B11226;
+  border-color: #B11226;
 }
 
 .grandline-synopsis-section {
@@ -1998,37 +1987,6 @@ p.lead {
   background: rgba(0, 0, 0, 0.4);
 }
 
-.initial-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9998;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(1.1);
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.initial-popup.show {
-  opacity: 1;
-  transform: scale(1);
-}
-.initial-popup.show .popup-char {
-  transform: translateY(0);
-  opacity: 1;
-}
-.initial-popup .popup-char {
-  max-height: 70vh;
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all 0.8s ease 0.3s;
-  filter: drop-shadow(0 0 20px rgba(244, 196, 48, 0.5));
-}
-
 .news-card img {
   transition: filter 0.3s ease;
 }
@@ -2044,7 +2002,7 @@ p.lead {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .gallery-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #B11226;
   color: #ffffff;
 }
 

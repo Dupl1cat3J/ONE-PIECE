@@ -2,13 +2,13 @@
 @use 'mixins' as m;
 @use 'sass:color';
 
-.popup-char {
-  width: 400px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
-  mix-blend-mode: screen;
-}
+// .popup-char {
+//   width: 400px;
+//   height: auto;
+//   object-fit: cover;
+//   border-radius: 4px;
+//   mix-blend-mode: screen;
+// }
 
 .footer {
   position: relative;
@@ -59,7 +59,10 @@
     filter: brightness(0.6);
   }
 
-  h1 { color: #F4C430; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+  h1 { 
+    color: #F4C430; 
+    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+  }
   p.lead { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); }
   .hero-cta { margin-top: 2rem; }
 }
@@ -264,11 +267,12 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    border-color: v.$color-hover;
+    background-color: v.$color-button;
+    border-color: v.$color-button;
+    color: v.$color-white;
   }
 }
 

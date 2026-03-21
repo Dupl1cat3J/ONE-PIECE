@@ -5,44 +5,63 @@
 .btn {
   text-decoration: none;
   display: inline-block;
-  padding: 16px 24px;
+  padding: 0.75rem 2.5rem;
   font-family: v.$font-secondary;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 4px;
+  letter-spacing: 2px;
+  border-radius: 4px; // ตามที่ต้องการ
+  // border: 2px solid v.$color-button;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: all v.$transition-normal;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   cursor: pointer;
 
+  // Shine sweep animation
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+    width: 60%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    transition: left v.$transition-normal;
-    z-index: -1;
+    background: linear-gradient(to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.18) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-15deg);
+    transition: left 0.5s ease;
+    z-index: 2;
+    pointer-events: none;
   }
 
-  &:hover::before { left: 0; }
-  &:active { transform: scale(0.98); }
+  &:hover::before {
+    left: 130%;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
 
   &-primary {
-    background-color: v.$color-button;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    // border-color: v.$color-button;
     color: v.$color-white;
-    box-shadow: 0 4px 15px rgba(177, 18, 38, 0.4);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
     &:hover {
-      background-color: color.adjust(v.$color-button, $lightness: -10%);
-      box-shadow: 0 6px 20px rgba(177, 18, 38, 0.6);
+      background-color: v.$color-button;
+      // border-color: v.$color-button;
       color: v.$color-white;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
     }
   }
 
@@ -58,6 +77,9 @@
     }
   }
 }
+
+
+
 
 
 @media (min-width: 768px) {

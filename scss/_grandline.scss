@@ -624,8 +624,8 @@
   line-height: 1;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-color: v.$color-hover;
+    background-color: v.$color-button;
+    border-color: v.$color-button;
   }
 }
 
