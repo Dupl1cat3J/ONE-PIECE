@@ -275,7 +275,11 @@ p.lead {
 @media (min-width: 768px) {
   .container,
   .container-fluid {
+<<<<<<< HEAD
     padding: 0 48px;
+=======
+    padding: 0 48px 0 48px;
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
   .row-2 {
     grid-template-columns: repeat(2, 1fr);
@@ -478,7 +482,11 @@ p.lead {
 }
 .footer .footer-brand .nav-logo-text {
   font-family: "Pirata One", cursive;
+<<<<<<< HEAD
   font-size: 32px;
+=======
+  font-size: 40px;
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   color: #F4C430;
   margin-bottom: 28px;
   display: inline-block;
@@ -634,6 +642,7 @@ p.lead {
   .footer .footer-bottom .condition p {
     font-size: 10px;
   }
+<<<<<<< HEAD
 }
 @media (min-width: 1024px) {
   .footer .footer-brand .nav-logo-text {
@@ -651,6 +660,8 @@ p.lead {
   .footer .footer-bottom .condition p {
     font-size: 16px;
   }
+=======
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
 }
 .footer {
   position: relative;
@@ -990,6 +1001,9 @@ p.lead {
     margin: 0;
     line-height: 150%;
   }
+  .character-row .about-text p {
+    font-size: 16px;
+  }
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1002,6 +1016,7 @@ p.lead {
     padding: 1.5rem;
   }
   .news-card .news-tag {
+<<<<<<< HEAD
     font-size: 16px;
     margin-bottom: 0.5rem;
   }
@@ -1090,6 +1105,17 @@ p.lead {
     font-family: "Pirata One", cursive;
     font-size: 48px;
     margin-bottom: 2rem;
+=======
+    font-size: 10px;
+    margin-bottom: 0.5rem;
+  }
+  .news-card h4 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+  .news-card p {
+    font-size: 12px;
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
   .gallery-btn {
     width: 50px;
@@ -1193,6 +1219,7 @@ p.lead {
 }
 
 @media (min-width: 768px) {
+<<<<<<< HEAD
   .about-title {
     font-family: "Pirata One", cursive;
     color: #F4C430;
@@ -1200,6 +1227,10 @@ p.lead {
   }
   #about .character-row {
     gap: 250px;
+=======
+  #about .character-row {
+    gap: 36px;
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
   #about .character-row .about-image {
     order: 0;
@@ -1752,11 +1783,16 @@ p.lead {
   }
   .grandline-synopsis-section .synopsis-text p,
   .synopsis-text p {
+<<<<<<< HEAD
     font-size: 24px;
+=======
+    font-size: 16px;
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
   .about-text p {
     font-size: 16px;
   }
+<<<<<<< HEAD
 }
 @media (min-width: 1024px) {
   .about-text p {
@@ -1789,6 +1825,8 @@ p.lead {
     gap: 8px;
     margin-top: 32px;
   }
+=======
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
 }
 .crew-bg-wrapper {
   position: fixed;

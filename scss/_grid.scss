@@ -72,6 +72,7 @@
 @media (min-width: 768px) {
 
   .container,
+<<<<<<< HEAD
   .container-fluid {
     padding: 0 48px;
   }
@@ -79,6 +80,14 @@
   .row-2 {
     grid-template-columns: repeat(2, 1fr);
   }
+=======
+  .container-fluid { padding: 0 48px 0 48px; }
+
+  // .row { gap: 2rem; }
+  .row-2 { grid-template-columns: repeat(2, 1fr); }
+  .row-3 { grid-template-columns: repeat(2, 1fr); }
+  .row-4 { grid-template-columns: repeat(2, 1fr); }
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
 
   .row-3 {
     grid-template-columns: repeat(2, 1fr);

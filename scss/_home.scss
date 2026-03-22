@@ -96,6 +96,7 @@
   }
 
   .about-text {
+<<<<<<< HEAD
     h2 {
       font-size: 28px;
       font-family: v.$font-primary;
@@ -113,6 +114,11 @@
       text-align: justify;
       line-height: 150%;
     }
+=======
+    h2 { font-size: 28px; font-family: v.$font-primary; margin-bottom: 16px; }
+    h3 { font-size: 20px; color: v.$color-text-highlight; margin-bottom: 16px; }
+    p  { font-size: 20px; text-align: justify; line-height: 150%; }
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
 }
 
@@ -334,6 +340,7 @@
 
   .character-row {
     text-align: left;
+<<<<<<< HEAD
     gap: 2rem;
     margin-bottom: 5rem;
 
@@ -365,6 +372,13 @@
         line-height: 150%;
       }
     }
+=======
+    gap: 0;
+
+    .about-image { justify-content: flex-start; }
+    .about-image img { width: 100%; max-width: 400px; }
+    .about-text p { font-size: 16px; }
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
 
   .news-section {
@@ -398,6 +412,7 @@
     margin-left: 0;
     margin-right: 0;
 
+<<<<<<< HEAD
     img {
       height: 160px;
     }
@@ -427,6 +442,12 @@
       font-size: 32px;
       margin-bottom: 2rem;
     }
+=======
+    .news-card-body { padding: 1.5rem; }
+    .news-tag       { font-size: 10px; margin-bottom: 0.5rem; }
+    h4              { font-size: 16px; margin-bottom: 1rem; }
+    p               { font-size: 12px; }
+>>>>>>> 208cbad82fb08c27513844732f4f86f0112c44a4
   }
 
   .gallery-btn {
