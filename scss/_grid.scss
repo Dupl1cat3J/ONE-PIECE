@@ -4,11 +4,19 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 32px;
 
-  @media (min-width: 1400px) { max-width: 1360px; }
-  @media (min-width: 1600px) { max-width: 1520px; }
-  @media (min-width: 1920px) { max-width: 1760px; }
+  @media (min-width: 1400px) {
+    max-width: 1360px;
+  }
+
+  @media (min-width: 1600px) {
+    max-width: 1520px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1760px;
+  }
 }
 
 .container-fluid {
@@ -18,30 +26,97 @@
 
 .row {
   display: grid;
-  gap: 1.5rem;
+  // gap: 1.5rem;
 
-  &-2 { grid-template-columns: 1fr; }
-  &-3 { grid-template-columns: 1fr; }
-  &-4 { grid-template-columns: 1fr; }
+  &-2 {
+    grid-template-columns: 1fr;
+  }
+
+  &-3 {
+    grid-template-columns: 1fr;
+  }
+
+  &-4 {
+    grid-template-columns: 1fr;
+  }
 }
 
-.section-padding { padding: 3rem 0; }
+.section-padding {
+  padding: 3rem 0;
+}
 
-.d-flex                  { display: flex; }
-.flex-column             { flex-direction: column; }
-.justify-content-center  { justify-content: center; }
-.justify-content-between { justify-content: space-between; }
-.align-items-center      { align-items: center; }
-.mb-5                    { margin-bottom: 3rem; }
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
 
 @media (min-width: 768px) {
+
   .container,
-  .container-fluid { padding: 0 1.5rem; }
+  .container-fluid {
+    padding: 0 48px;
+  }
 
-  .row { gap: 2rem; }
-  .row-2 { grid-template-columns: repeat(2, 1fr); }
-  .row-3 { grid-template-columns: repeat(2, 1fr); }
-  .row-4 { grid-template-columns: repeat(2, 1fr); }
+  .row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  .section-padding { padding: 5rem 0; }
+  .row-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .row-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-padding {
+    padding: 5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container,
+  .container-fluid {
+    padding: 0 64px;
+  }
+
+  .row-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .row-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .section-padding {
+    padding: 6rem 0;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .container,
+  .container-fluid {
+    padding: 0 80px;
+  }
 }

@@ -701,8 +701,7 @@ p.lead {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: -1;
   filter: brightness(0.6);
 }
@@ -736,8 +735,7 @@ p.lead {
   width: 100%;
   max-width: 250px;
   aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 .character-row .about-text h2 {
@@ -806,8 +804,7 @@ p.lead {
 .news-card img {
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .news-card .news-card-body {
   padding: 0.75rem 1rem;
@@ -846,9 +843,7 @@ p.lead {
 .gallery-track {
   display: flex;
   gap: 1.5rem;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -868,8 +863,7 @@ p.lead {
 .gallery-item img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 8px;
   display: block;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
@@ -955,72 +949,83 @@ p.lead {
   }
   .character-row {
     text-align: left;
-    gap: 0;
+    gap: 2rem;
+    margin-bottom: 5rem;
   }
   .character-row .about-image {
     justify-content: flex-start;
   }
   .character-row .about-image img {
     width: 100%;
-    max-width: 550px;
+    max-width: 400px;
   }
   .character-row .about-text h2 {
-    font-size: 48px;
+    font-size: 32px;
     font-family: "Pirata One", cursive;
     margin-bottom: 16px;
   }
   .character-row .about-text h3 {
-    font-size: 36px;
+    font-size: 24px;
     color: #EAE2B7;
     margin-bottom: 16px;
   }
   .character-row .about-text p {
-    font-size: 28px;
+    font-size: 18px;
     text-align: justify;
     line-height: 150%;
   }
+  .news-section {
+    margin-bottom: 5rem;
+  }
+  .news-header-row {
+    margin-bottom: 2rem;
+  }
   .news-header-row .h2 {
     font-family: "Pirata One", cursive;
-    font-size: 48px;
-    margin-bottom: 16px;
+    font-size: 32px;
+    margin-bottom: 12px;
   }
   .news-header-row .news-subtitle {
-    font-size: 28px;
+    font-size: 18px;
     color: #EAE2B7;
     margin: 0;
     line-height: 150%;
   }
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .news-card {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
+  .news-card img {
+    height: 160px;
+  }
   .news-card .news-card-body {
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .news-card .news-tag {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 0.5rem;
   }
   .news-card h4 {
-    font-size: 24px;
+    font-size: 16px;
     margin-bottom: 1rem;
   }
   .news-card p {
-    font-size: 18px;
+    font-size: 14px;
   }
   .gallery-section h2 {
     font-family: "Pirata One", cursive;
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 2rem;
   }
   .gallery-btn {
     width: 50px;
     height: 50px;
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -1029,72 +1034,83 @@ p.lead {
   }
   .character-row {
     text-align: left;
-    gap: 0;
+    gap: 2rem;
+    margin-bottom: 5rem;
   }
   .character-row .about-image {
     justify-content: flex-start;
   }
   .character-row .about-image img {
     width: 100%;
-    max-width: 550px;
+    max-width: 400px;
   }
   .character-row .about-text h2 {
-    font-size: 48px;
+    font-size: 32px;
     font-family: "Pirata One", cursive;
     margin-bottom: 16px;
   }
   .character-row .about-text h3 {
-    font-size: 36px;
+    font-size: 24px;
     color: #EAE2B7;
     margin-bottom: 16px;
   }
   .character-row .about-text p {
-    font-size: 28px;
+    font-size: 18px;
     text-align: justify;
     line-height: 150%;
   }
+  .news-section {
+    margin-bottom: 5rem;
+  }
+  .news-header-row {
+    margin-bottom: 2rem;
+  }
   .news-header-row .h2 {
     font-family: "Pirata One", cursive;
-    font-size: 48px;
-    margin-bottom: 16px;
+    font-size: 32px;
+    margin-bottom: 12px;
   }
   .news-header-row .news-subtitle {
-    font-size: 28px;
+    font-size: 18px;
     color: #EAE2B7;
     margin: 0;
     line-height: 150%;
   }
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .news-card {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
+  .news-card img {
+    height: 160px;
+  }
   .news-card .news-card-body {
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .news-card .news-tag {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 0.5rem;
   }
   .news-card h4 {
-    font-size: 24px;
+    font-size: 16px;
     margin-bottom: 1rem;
   }
   .news-card p {
-    font-size: 18px;
+    font-size: 14px;
   }
   .gallery-section h2 {
     font-family: "Pirata One", cursive;
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 2rem;
   }
   .gallery-btn {
     width: 50px;
     height: 50px;
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
 .fixed-bg-video {
@@ -1115,8 +1131,7 @@ p.lead {
   min-height: 100%;
   width: auto;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translate(-50%, -50%);
   filter: brightness(0.5);
 }
@@ -1199,10 +1214,17 @@ p.lead {
     font-size: 48px;
   }
   #about .character-row {
-    gap: 250px;
+    gap: 2rem;
+    align-items: center;
   }
   #about .character-row .about-image {
     order: 0;
+    display: flex;
+    justify-content: center;
+  }
+  #about .character-row .about-image img {
+    max-width: 400px;
+    width: 100%;
   }
   #about .character-row .about-text {
     order: -1;
@@ -1245,6 +1267,7 @@ p.lead {
   color: #EAE2B7;
   font-size: 28px;
   margin-bottom: 1rem;
+  line-height: 150%;
 }
 
 #about .h3 {
@@ -1265,8 +1288,7 @@ p.lead {
 .gallery-grid .gallery-item img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 .gallery-grid .gallery-item img:hover {
@@ -1290,8 +1312,7 @@ p.lead {
 .news-item .news-image img {
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .news-item .news-content {
   padding: 1.5rem;
@@ -1351,8 +1372,7 @@ p.lead {
 .char-card .char-card-img img {
   width: 100%;
   height: 160px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 .char-card .char-card-img .char-card-overlay {
@@ -1473,8 +1493,7 @@ p.lead {
 .wanted-frame img {
   width: 100%;
   height: 180px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid #8B6914;
 }
 .wanted-frame .wanted-dead {
@@ -1578,7 +1597,6 @@ p.lead {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -1595,8 +1613,7 @@ p.lead {
   width: 100%;
   height: 100%;
   min-height: 360px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -1707,8 +1724,7 @@ p.lead {
 .grandline-synopsis-section .synopsis-img img {
   width: 100%;
   border-radius: 8px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .grandline-synopsis-section .synopsis-text p {
   font-size: 20px;
@@ -1752,15 +1768,10 @@ p.lead {
   }
   .grandline-synopsis-section .synopsis-text p,
   .synopsis-text p {
-    font-size: 24px;
+    font-size: 18px;
   }
   .about-text p {
-    font-size: 16px;
-  }
-}
-@media (min-width: 1024px) {
-  .about-text p {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1024px) {
@@ -1824,7 +1835,7 @@ p.lead {
   color: #F4C430;
 }
 .crew-hero p {
-  color: #B0B3B8;
+  color: #EAE2B7;
 }
 
 .crew-timeline {
@@ -1877,8 +1888,7 @@ p.lead {
 .crew-card .crew-card-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 .crew-card .crew-card-img .crew-card-overlay {
@@ -1894,7 +1904,7 @@ p.lead {
 .crew-card .crew-card-img .crew-card-overlay span {
   color: #F4C430;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -1919,6 +1929,7 @@ p.lead {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .crew-detail-overlay {
@@ -2002,8 +2013,7 @@ p.lead {
   width: 100%;
   max-width: 320px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -2286,8 +2296,7 @@ p.lead {
 .arc-card img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 .arc-card .arc-info {
