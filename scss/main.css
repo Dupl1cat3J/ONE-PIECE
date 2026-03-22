@@ -75,7 +75,8 @@ h1.lead {
 p {
   margin-bottom: 16px;
   color: #B0B3B8;
-  font-size: 16px;
+  font-size: 20px;
+  text-align: justify;
 }
 p.lead {
   font-size: 18px;
@@ -143,7 +144,6 @@ p.lead {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-radius: 4px;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -175,12 +175,12 @@ p.lead {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   color: #ffffff;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
 }
 .btn-primary:hover {
   background-color: #B11226;
   color: #ffffff;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 .btn-outline {
   background-color: transparent;
@@ -203,7 +203,7 @@ p.lead {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 32px;
 }
 @media (min-width: 1400px) {
   .container {
@@ -228,7 +228,6 @@ p.lead {
 
 .row {
   display: grid;
-  gap: 1.5rem;
 }
 .row-2 {
   grid-template-columns: 1fr;
@@ -271,10 +270,7 @@ p.lead {
 @media (min-width: 768px) {
   .container,
   .container-fluid {
-    padding: 0 1.5rem;
-  }
-  .row {
-    gap: 2rem;
+    padding: 0 48px 0 48px;
   }
   .row-2 {
     grid-template-columns: repeat(2, 1fr);
@@ -442,9 +438,9 @@ p.lead {
 }
 .footer .footer-brand .nav-logo-text {
   font-family: "Pirata One", cursive;
-  font-size: 2rem;
+  font-size: 40px;
   color: #F4C430;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   display: inline-block;
 }
 .footer .footer-brand p {
@@ -469,7 +465,7 @@ p.lead {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
+  width: 100%;
   height: 2px;
   background: #B11226;
 }
@@ -487,7 +483,7 @@ p.lead {
   margin: 0;
 }
 .footer ul.footer-links li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 20px;
 }
 .footer ul.footer-links li a {
   font-size: 16px;
@@ -530,7 +526,7 @@ p.lead {
 }
 .footer .footer-bottom p {
   margin: 0;
-  font-size: 10px;
+  font-size: 12px;
   color: #B0B3B8;
 }
 .footer .footer-bottom .condition {
@@ -539,13 +535,13 @@ p.lead {
 }
 .footer .footer-bottom .condition p {
   margin: 0;
-  font-size: 10px;
+  font-size: 12px;
   color: #B0B3B8;
 }
 
 @media (min-width: 768px) {
   .footer {
-    padding: 20px 0 20px;
+    padding: 28px 0 28px;
   }
   .footer .footer-nav-row {
     flex-direction: row;
@@ -568,6 +564,7 @@ p.lead {
     margin: 0 auto;
   }
   .footer h4 {
+    font-size: 14px;
     text-align: left;
     margin-bottom: 20px;
   }
@@ -578,6 +575,9 @@ p.lead {
   .footer ul.footer-links {
     text-align: left;
   }
+  .footer ul.footer-links li a {
+    font-size: 14px;
+  }
   .footer .social-icons {
     justify-content: flex-start;
   }
@@ -587,6 +587,12 @@ p.lead {
     align-items: center;
     text-align: left;
     padding-top: 20px;
+  }
+  .footer .footer-bottom p {
+    font-size: 10px;
+  }
+  .footer .footer-bottom .condition p {
+    font-size: 10px;
   }
 }
 .footer {
@@ -666,6 +672,7 @@ p.lead {
 .character-row .about-image {
   display: flex;
   justify-content: center;
+  margin-bottom: 16px;
 }
 .character-row .about-image img {
   border-radius: 8px;
@@ -682,13 +689,13 @@ p.lead {
   margin-bottom: 16px;
 }
 .character-row .about-text h3 {
-  font-size: 24px;
+  font-size: 20px;
   color: #EAE2B7;
   margin-bottom: 16px;
 }
 .character-row .about-text p {
-  padding: 0;
-  text-align: left;
+  font-size: 20px;
+  text-align: justify;
   line-height: 150%;
 }
 
@@ -725,7 +732,7 @@ p.lead {
 .news-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 28px;
 }
 
 .news-card {
@@ -870,12 +877,14 @@ p.lead {
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  font-size: 0.85rem;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  padding: 0;
 }
 .gallery-btn:hover {
   background-color: #B11226;
@@ -886,6 +895,7 @@ p.lead {
 @media (min-width: 768px) {
   .character-row {
     text-align: left;
+    gap: 0;
   }
   .character-row .about-image {
     justify-content: flex-start;
@@ -893,6 +903,9 @@ p.lead {
   .character-row .about-image img {
     width: 100%;
     max-width: 400px;
+  }
+  .character-row .about-text p {
+    font-size: 16px;
   }
   .news-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -906,15 +919,15 @@ p.lead {
     padding: 1.5rem;
   }
   .news-card .news-tag {
-    font-size: 14px;
+    font-size: 10px;
     margin-bottom: 0.5rem;
   }
   .news-card h4 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 1rem;
   }
   .news-card p {
-    font-size: 16px;
+    font-size: 12px;
   }
   .gallery-btn {
     width: 50px;
@@ -1002,18 +1015,25 @@ p.lead {
 .about-text {
   font-family: "Space Grotesk", sans-serif;
 }
+.about-text p {
+  font-size: 20px;
+}
 
 #about .character-row {
   margin-bottom: 0;
 }
 #about .character-row .about-image {
   order: -1;
+  margin-bottom: 16px;
 }
 #about .character-row .about-text {
   order: 0;
 }
 
 @media (min-width: 768px) {
+  #about .character-row {
+    gap: 36px;
+  }
   #about .character-row .about-image {
     order: 0;
   }
@@ -1490,13 +1510,15 @@ p.lead {
   border: 2px solid #B11226;
   background: rgba(0, 0, 0, 0.7);
   color: #ffffff;
-  font-size: 1.4rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
   line-height: 1;
+  padding: 0;
 }
 .arc-nav-btn:hover {
   background-color: #B11226;
@@ -1551,7 +1573,7 @@ p.lead {
   }
   .detail-layout {
     flex-direction: row;
-    gap: 2rem;
+    gap: 24px;
   }
   .arc-nav-btn {
     width: 50px;
@@ -1560,6 +1582,13 @@ p.lead {
   .grandline-synopsis-section .synopsis-layout {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+  .grandline-synopsis-section .synopsis-text p,
+  .synopsis-text p {
+    font-size: 16px;
+  }
+  .about-text p {
+    font-size: 16px;
   }
 }
 .crew-bg-wrapper {
@@ -1617,7 +1646,7 @@ p.lead {
 .crew-timeline-item {
   display: flex;
   justify-content: flex-end;
-  padding-right: calc(50% + 1rem);
+  padding-right: calc(50% + 1.5rem);
   margin-bottom: 2.5rem;
   position: relative;
 }
@@ -1628,7 +1657,7 @@ p.lead {
 }
 
 .crew-card {
-  width: 140px;
+  width: 200px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
@@ -1677,16 +1706,16 @@ p.lead {
   opacity: 1;
 }
 .crew-card .crew-card-info {
-  padding: 0.6rem;
+  padding: 12px;
   text-align: center;
 }
 .crew-card .crew-card-info h3 {
-  font-size: 0.75rem;
+  font-size: 14px;
   color: #ffffff;
-  margin: 0 0 0.15rem;
+  margin: 0 0 20px;
 }
 .crew-card .crew-card-info p {
-  font-size: 0.65rem;
+  font-size: 12px;
   color: #F4C430;
   margin: 0;
   text-transform: uppercase;
@@ -1763,7 +1792,7 @@ p.lead {
 .crew-detail-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
 .crew-wanted {
@@ -1782,16 +1811,16 @@ p.lead {
 .crew-detail-name {
   font-family: "Pirata One", cursive;
   color: #F4C430;
-  font-size: 1.6rem;
-  margin: 0 0 0.25rem;
+  font-size: 28px;
+  margin: 0 0 12px;
 }
 
 .crew-detail-role {
   color: #B11226;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 20px;
   letter-spacing: 2px;
-  margin: 0 0 1rem;
+  margin: 0 0 20px;
 }
 
 .crew-detail-quote {
@@ -1800,9 +1829,13 @@ p.lead {
   padding: 0.75rem 1rem;
   border-radius: 0 6px 6px 0;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #ddd;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+}
+.crew-detail-quote P {
+  margin: 0;
+  line-height: 150%;
 }
 
 .crew-detail-stats {
@@ -1818,27 +1851,31 @@ p.lead {
   gap: 0.1rem;
 }
 .crew-stat .stat-label {
-  font-size: 0.7rem;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #888;
+  margin-bottom: 12px;
 }
 .crew-stat .stat-value {
-  font-size: 0.95rem;
+  font-size: 18px;
   font-weight: 600;
   color: #ffffff;
+  margin-bottom: 20px;
 }
 .crew-stat .stat-value.bounty-value {
   font-family: "Courier New", monospace;
   color: #F4C430;
-  font-size: 1.1rem;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .crew-detail-bio {
-  font-size: 0.9rem;
+  font-size: 18px;
   line-height: 1.7;
   color: #B0B3B8;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 .crew-close-btn {

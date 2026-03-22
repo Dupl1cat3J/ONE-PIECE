@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 32px;
 
   @media (min-width: 1400px) { max-width: 1360px; }
   @media (min-width: 1600px) { max-width: 1520px; }
@@ -18,7 +18,7 @@
 
 .row {
   display: grid;
-  gap: 1.5rem;
+  // gap: 1.5rem;
 
   &-2 { grid-template-columns: 1fr; }
   &-3 { grid-template-columns: 1fr; }
@@ -36,9 +36,9 @@
 
 @media (min-width: 768px) {
   .container,
-  .container-fluid { padding: 0 1.5rem; }
+  .container-fluid { padding: 0 48px 0 48px; }
 
-  .row { gap: 2rem; }
+  // .row { gap: 2rem; }
   .row-2 { grid-template-columns: repeat(2, 1fr); }
   .row-3 { grid-template-columns: repeat(2, 1fr); }
   .row-4 { grid-template-columns: repeat(2, 1fr); }

@@ -62,7 +62,7 @@
 .crew-timeline-item {
   display: flex;
   justify-content: flex-end;
-  padding-right: calc(50% + 1rem);
+  padding-right: calc(50% + 1.5rem);
   margin-bottom: 2.5rem;
   position: relative;
 
@@ -74,7 +74,7 @@
 }
 
 .crew-card {
-  width: 140px;
+  width: 200px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
@@ -129,17 +129,17 @@
   }
 
   .crew-card-info {
-    padding: 0.6rem;
+    padding: 12px;
     text-align: center;
 
     h3 {
-      font-size: 0.75rem;
+      font-size: 14px;
       color: v.$color-white;
-      margin: 0 0 0.15rem;
+      margin: 0 0 20px;
     }
 
     p {
-      font-size: 0.65rem;
+      font-size: 12px;
       color: v.$color-hover;
       margin: 0;
       text-transform: uppercase;
@@ -226,7 +226,7 @@
 .crew-detail-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
 .crew-wanted {
@@ -244,16 +244,16 @@
 .crew-detail-name {
   font-family: v.$font-primary;
   color: v.$color-hover;
-  font-size: 1.6rem;
-  margin: 0 0 0.25rem;
+  font-size: 28px;
+  margin: 0 0 12px;
 }
 
 .crew-detail-role {
   color: v.$color-button;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 20px;
   letter-spacing: 2px;
-  margin: 0 0 1rem;
+  margin: 0 0 20px;
 }
 
 .crew-detail-quote {
@@ -262,9 +262,14 @@
   padding: 0.75rem 1rem;
   border-radius: 0 6px 6px 0;
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #ddd;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+
+  P {
+    margin: 0;
+    line-height: 150%;
+  }
 }
 
 .crew-detail-stats {
@@ -280,30 +285,34 @@
   gap: 0.1rem;
 
   .stat-label {
-    font-size: 0.7rem;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #888;
+    margin-bottom: 12px;
   }
 
   .stat-value {
-    font-size: 0.95rem;
+    font-size: 18px;
     font-weight: 600;
     color: v.$color-white;
+    margin-bottom: 20px;
 
     &.bounty-value {
       font-family: 'Courier New', monospace;
       color: v.$color-hover;
-      font-size: 1.1rem;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
   }
 }
 
 .crew-detail-bio {
-  font-size: 0.9rem;
+  font-size: 18px;
   line-height: 1.7;
   color: v.$color-text-muted;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 .crew-close-btn {
